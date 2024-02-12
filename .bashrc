@@ -160,6 +160,8 @@ alias scpresume="rsync --partial --progress --rsh=ssh --human-readable"
 alias rcopy="rsync --partial --progress --append --rsh=ssh --recursive --human-readable"
 alias rmove="rsync --partial --progress --append --rsh=ssh --recursive --human-readable --remove-source-files"
 
+alias vi=nvim
+
 # Reset colors
 unset LSCOLORS
 export CLICOLOR=1
