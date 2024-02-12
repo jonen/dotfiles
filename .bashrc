@@ -1,6 +1,3 @@
-export LC_ALL="en_US.UTF-8"
-export LANG="en_US.UTF-8"
-
 # Enable the subsequent settings only in interactive sessions
 case $- in
   *i*) ;;
@@ -125,7 +122,8 @@ source "$OSH"/oh-my-bash.sh
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
-# export LANG=en_US.UTF-8
+export LC_ALL="en_US.UTF-8"
+export LANG="en_US.UTF-8"
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
@@ -161,6 +159,7 @@ alias lsd='ls -d */'
 alias scpresume="rsync --partial --progress --rsh=ssh --human-readable"
 alias rcopy="rsync --partial --progress --append --rsh=ssh --recursive --human-readable"
 alias rmove="rsync --partial --progress --append --rsh=ssh --recursive --human-readable --remove-source-files"
+
 # Reset colors
 unset LSCOLORS
 export CLICOLOR=1
