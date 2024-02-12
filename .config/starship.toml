@@ -12,3 +12,6 @@ success_symbol = '[➜](bold green)' # The 'success_symbol' segment is being set
 [package]
 disabled = true
 
+[directory]
+truncation_length = 8
+truncation_symbol = '…/'
