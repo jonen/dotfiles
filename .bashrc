@@ -93,7 +93,6 @@ completions=(
   ssh
   tmux
   pip3
-  conda
 )
 
 # Which aliases would you like to load? (aliases can be found in ~/.oh-my-bash/aliases/*)
