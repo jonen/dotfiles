@@ -168,3 +168,7 @@ export CLICOLOR_FORCE=1
 
 # set homebrew env on macOS
 eval "$(/opt/homebrew/bin/brew shellenv)"
+
+# activate fzf fuzzy find
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
