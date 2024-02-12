@@ -15,3 +15,10 @@ disabled = true
 [directory]
 truncation_length = 8
 truncation_symbol = '…/'
+
+[hostname]
+ssh_only = true
+format = '[$ssh_symbol](bold blue) on [$hostname](bold red) '
+trim_at = '.companyname.com'
+disabled = false
+
