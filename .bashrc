@@ -62,7 +62,7 @@ OSH_THEME="luan"
 # * '[dd.mm.yyyy]'   # [dd.mm.yyyy] + [time] with colors
 # * '[yyyy-mm-dd]'   # [yyyy-mm-dd] + [time] with colors
 # If not set, the default value is 'yyyy-mm-dd'.
-# HIST_STAMPS='yyyy-mm-dd'
+HIST_STAMPS='yyyy-mm-dd'
 
 # Uncomment the following line if you do not want OMB to overwrite the existing
 # aliases by the default OMB aliases defined in lib/*.sh
@@ -73,7 +73,7 @@ OSH_THEME="luan"
 
 # To disable the uses of "sudo" by oh-my-bash, please set "false" to
 # this variable.  The default behavior for the empty value is "true".
-OMB_USE_SUDO=true
+OMB_USE_SUDO=false
 
 # To enable/disable display of Python virtualenv and condaenv
 # OMB_PROMPT_SHOW_PYTHON_VENV=true  # enable
@@ -87,6 +87,9 @@ completions=(
   git
   composer
   ssh
+  tmux
+  pip3
+  conda
 )
 
 # Which aliases would you like to load? (aliases can be found in ~/.oh-my-bash/aliases/*)
