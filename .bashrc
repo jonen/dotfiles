@@ -165,3 +165,6 @@ alias rmove="rsync --partial --progress --append --rsh=ssh --recursive --human-r
 unset LSCOLORS
 export CLICOLOR=1
 export CLICOLOR_FORCE=1
+
+# set homebrew env on macOS
+eval "$(/opt/homebrew/bin/brew shellenv)"
