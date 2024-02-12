@@ -149,6 +149,18 @@ source "$OSH"/oh-my-bash.sh
 # alias bashconfig="mate ~/.bashrc"
 # alias ohmybash="mate ~/.oh-my-bash"
 #
+
+# Aliases
+
+alias ll='ls -lah'
+alias l='ls -lh'
+alias lsa='ls -lah'
+alias la='ls -lA'
+alias lsd='ls -d */'
+
+alias scpresume="rsync --partial --progress --rsh=ssh --human-readable"
+alias rcopy="rsync --partial --progress --append --rsh=ssh --recursive --human-readable"
+alias rmove="rsync --partial --progress --append --rsh=ssh --recursive --human-readable --remove-source-files"
 # Reset colors
 unset LSCOLORS
 export CLICOLOR=1
