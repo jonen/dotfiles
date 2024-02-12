@@ -146,3 +146,8 @@ source "$OSH"/oh-my-bash.sh
 # Example aliases
 # alias bashconfig="mate ~/.bashrc"
 # alias ohmybash="mate ~/.oh-my-bash"
+#
+# Reset colors
+unset LSCOLORS
+export CLICOLOR=1
+export CLICOLOR_FORCE=1
