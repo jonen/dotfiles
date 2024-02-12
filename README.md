@@ -7,3 +7,4 @@
 - tmux with tpm
     - https://github.com/tmux-plugins/tpm
 - neovim
+- ripgrep
