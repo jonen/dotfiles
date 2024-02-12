@@ -172,3 +172,5 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 # activate fzf fuzzy find
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
+export PATH=$PATH:~/.local/bin:/usr/local/bin:~/.fzf/bin:/usr/local/share/dotnet:~/.dotnet/tools
+
