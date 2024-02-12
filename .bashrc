@@ -1,3 +1,6 @@
+export LC_ALL="en_US.UTF-8"
+export LANG="en_US.UTF-8"
+
 # Enable the subsequent settings only in interactive sessions
 case $- in
   *i*) ;;
