@@ -7,6 +7,7 @@ return  {
       ensure_installed = {"c", "lua", "query", "vim", "vimdoc", "python"},
       indent = { enable = true },
       highlight = { enable = true },
+      autotag = { enable = true },
     })
   end
 }
