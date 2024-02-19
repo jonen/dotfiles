@@ -15,6 +15,7 @@ vim.keymap.set('n', '<C-l>', '<C-w>l',{noremap = true})
 -- use Tab to switch buffers
 vim.keymap.set('n', '<tab>', ':bn<CR>',{noremap = true})
 vim.keymap.set('n', '<S-tab>', ':bp<CR>',{noremap = true})
+vim.keymap.set('n', '<leader>x', ':BufferClose<CR>',{noremap = true})
 
 -- set clipboard
 vim.api.nvim_set_option("clipboard", "unnamed")
