@@ -8,4 +8,3 @@ vim.g.mapleader = " "
 
 -- set clipboard
 vim.opt.clipboard = "unnamedplus"
-

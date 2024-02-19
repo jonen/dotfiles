@@ -9,9 +9,7 @@ if not vim.loop.fs_stat(lazypath) then
   })
 end
 vim.opt.rtp:prepend(lazypath)
-local opts = {}
 
 require("vim-options")
 require("keybindings")
 require("lazy").setup("plugins")
-
