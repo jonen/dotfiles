@@ -1,14 +1,11 @@
-return {'romgrk/barbar.nvim',
+return {
+  'romgrk/barbar.nvim',
   dependencies = {
-    'lewis6991/gitsigns.nvim', -- OPTIONAL: for git status
-    'nvim-tree/nvim-web-devicons', -- OPTIONAL: for file icons
+    'lewis6991/gitsigns.nvim',
+    'nvim-tree/nvim-web-devicons',
   },
   init = function() vim.g.barbar_auto_setup = false end,
   opts = {
-    -- lazy.nvim will automatically call setup for you. put your options here, anything missing will use the default:
-    -- animation = true,
-    -- insert_at_start = true,
-    -- …etc.
     auto_hide = false,
     clickable = true,
     focus_on_close = left,
@@ -16,5 +13,5 @@ return {'romgrk/barbar.nvim',
       ['neo-tree'] = {event = 'BufWipeout'},
     }
   },
-  version = '^1.0.0', -- optional: only update when a new 1.x version is released
+  version = '^1.0.0',
 }
