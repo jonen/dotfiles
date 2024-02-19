@@ -47,3 +47,8 @@ vim.api.nvim_create_autocmd('LspAttach', {
     -- end, opts)
   end,
 })
+
+-- git
+vim.keymap.set("n", "<leader>gp", ":Gitsigns preview_hunk<CR>", {desc = "Git preview hunk"})
+vim.keymap.set("n", "<leader>gt", ":Gitsigns toggle_current_line_blame<CR>", {desc = "Git toggle blame"})
+
