@@ -8,7 +8,7 @@ return {
   opts = {
     auto_hide = false,
     clickable = true,
-    focus_on_close = left,
+    focus_on_close = 'left',
     sidebar_filetypes = {
       ['neo-tree'] = {event = 'BufWipeout'},
     }
