@@ -5,6 +5,7 @@ vim.opt.softtabstop = 2
 vim.opt.shiftwidth = 2
 vim.opt.cursorline = true
 vim.g.mapleader = " "
+vim.opt.hlsearch = false
 
 -- set clipboard
 vim.opt.clipboard = "unnamedplus"
