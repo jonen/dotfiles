@@ -116,10 +116,16 @@ alias scpresume="rsync --partial --progress --rsh=ssh --human-readable"
 alias rcopy="rsync --partial --progress --append --rsh=ssh --recursive --human-readable"
 alias rmove="rsync --partial --progress --append --rsh=ssh --recursive --human-readable --remove-source-files"
 
-alias vim=nvim
-alias vi=nvim
+# check for neovim and set alias if installed
+nvim_locations = (/usr/bin/nvim /opt/homebrew/bin/nvim)
+for location in "${nvim_locations[@]}"; do
+  if [ -f "$location" ]; then
+    alias vim=nvim
+    break
+  fi
+done
 
-export EDITOR=nvim
+export EDITOR=vim
 export XDG_CONFIG_HOME=~/.config
 
 # Reset colors
