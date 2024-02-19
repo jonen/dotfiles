@@ -16,3 +16,5 @@ vim.keymap.set('n', '<C-l>', '<C-w>l',{noremap = true})
 vim.keymap.set('n', '<tab>', ':bn<CR>',{noremap = true})
 vim.keymap.set('n', '<S-tab>', ':bp<CR>',{noremap = true})
 
+-- set clipboard
+vim.api.nvim_set_option("clipboard", "unnamed")
