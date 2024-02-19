@@ -140,4 +140,7 @@ export CLICOLOR_FORCE=1
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 export PATH=$PATH:~/.local/bin:/usr/local/bin:~/.fzf/bin:/usr/local/share/dotnet:~/.dotnet/tools
+export PATH=$PATH:~/.local/bin:/usr/local/bin:~/.fzf/bin:/usr/local/share/dotnet:~/.dotnet/tools:~/.config/tmux/plugins/tmuxifier/bin
 
+eval "$(tmuxifier init -)"
+alias tmi=tmuxifier
