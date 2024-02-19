@@ -10,7 +10,10 @@ return {
     config = function()
       require("mason-lspconfig").setup({
         ensure_installed = {
-          "lua_ls"
+          "lua_ls",  -- Lua
+          "pyright", -- Python
+          "clangd", -- C, C++
+          "omnisharp", -- C#
         }
       })
     end
@@ -20,6 +23,9 @@ return {
     config = function()
       local lspconfig = require("lspconfig")
       lspconfig.lua_ls.setup({})
+      lspconfig.pyright.setup({})
+      lspconfig.clangd.setup({})
+      lspconfig.omnisharp.setup({})
     end
   }
 }
