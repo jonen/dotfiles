@@ -1,7 +1,7 @@
 # Enable the subsequent settings only in interactive sessions
 case $- in
   *i*) ;;
-    *) return;;
+  *) return;;
 esac
 
 # Path to your oh-my-bash installation.
@@ -121,11 +121,13 @@ nvim_locations=(/usr/bin/nvim /opt/homebrew/bin/nvim)
 for location in "${nvim_locations[@]}"; do
   if [ -f "$location" ]; then
     alias vim=nvim
+    export EDITOR=nvim
     break
+  else
+    export EDITOR=vim
   fi
 done
 
-export EDITOR=vim
 export XDG_CONFIG_HOME=~/.config
 
 # Reset colors
@@ -139,7 +141,6 @@ export CLICOLOR_FORCE=1
 # activate fzf fuzzy find
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
-export PATH=$PATH:~/.local/bin:/usr/local/bin:~/.fzf/bin:/usr/local/share/dotnet:~/.dotnet/tools
 export PATH=$PATH:~/.local/bin:/usr/local/bin:~/.fzf/bin:/usr/local/share/dotnet:~/.dotnet/tools:~/.config/tmux/plugins/tmuxifier/bin
 
 eval "$(tmuxifier init -)"
