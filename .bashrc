@@ -117,7 +117,7 @@ alias rcopy="rsync --partial --progress --append --rsh=ssh --recursive --human-r
 alias rmove="rsync --partial --progress --append --rsh=ssh --recursive --human-readable --remove-source-files"
 
 # check for neovim and set alias if installed
-nvim_locations = (/usr/bin/nvim /opt/homebrew/bin/nvim)
+nvim_locations=(/usr/bin/nvim /opt/homebrew/bin/nvim)
 for location in "${nvim_locations[@]}"; do
   if [ -f "$location" ]; then
     alias vim=nvim
