@@ -13,7 +13,7 @@ vim.keymap.set('n', '<leader>x', ':BufferClose<CR>',{noremap = true, desc = "Clo
 vim.keymap.set('n', '<leader>fs', ':w<CR>',{noremap = true, desc = "Save current tab/buffer"})
 
 -- indent buffer
-vim.keymap.set('n', '<leader>fi', 'gg=G',{noremap = true, desc = "Indent current tab/buffer"})
+vim.keymap.set('n', '<leader>fi', 'migg=G`i',{noremap = true, desc = "Indent current tab/buffer"})
 
 -- quit
 vim.keymap.set('n', '<leader>qq', ':qa<CR>',{noremap = true, desc = "Quit nvim"})
