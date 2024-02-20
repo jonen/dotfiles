@@ -5,7 +5,6 @@ return {
       "nvim-lua/plenary.nvim",         -- required
       "sindrets/diffview.nvim",        -- optional - Diff integration
     },
-    -- config = true
     config = function ()
       local ngit = require("neogit")
 
@@ -13,10 +12,7 @@ return {
         kind = 'vsplit',
         signs = {
           -- { CLOSED, OPENED }
---          hunk = { "", "" },
           hunk = { "", "" },
---          item = { "", "" },
---          section = { "", "" },
           item = { "󰍜", "󰮫" },
           section = { "󰍜", "󰮫" },
         },
