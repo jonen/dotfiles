@@ -5,7 +5,14 @@ return {
       "nvim-lua/plenary.nvim",         -- required
       "sindrets/diffview.nvim",        -- optional - Diff integration
     },
-    config = true
+    -- config = true
+    config = function ()
+      local ngit = require("neogit")
+
+      ngit.setup({
+        kind = 'vsplit'
+      })
+    end
   },
   {
     "lewis6991/gitsigns.nvim",
