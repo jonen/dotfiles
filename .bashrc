@@ -7,9 +7,7 @@ esac
 # Path to your oh-my-bash installation.
 export OSH=~/.oh-my-bash
 
-# Set name of the theme to load. Optionally, if you set this to "random"
-# it'll load a random theme each time that oh-my-bash is loaded.
-#OSH_THEME="edsonarios"
+# Set name of the theme to load. 
 OSH_THEME="powerline-multiline"
 
 # Uncomment the following line to disable bi-weekly auto-update checks.
@@ -34,12 +32,6 @@ SCM_GIT_DISABLE_UNTRACKED_DIRTY="true"
 # Uncomment the following line if you want to change the command execution time
 # stamp shown in the history command output.  One of the following values can
 # be used to specify the timestamp format.
-# * 'mm/dd/yyyy'     # mm/dd/yyyy + time
-# * 'dd.mm.yyyy'     # dd.mm.yyyy + time
-# * 'yyyy-mm-dd'     # yyyy-mm-dd + time
-# * '[mm/dd/yyyy]'   # [mm/dd/yyyy] + [time] with colors
-# * '[dd.mm.yyyy]'   # [dd.mm.yyyy] + [time] with colors
-# * '[yyyy-mm-dd]'   # [yyyy-mm-dd] + [time] with colors
 # If not set, the default value is 'yyyy-mm-dd'.
 HIST_STAMPS='yyyy-mm-dd'
 
@@ -55,13 +47,10 @@ HIST_STAMPS='yyyy-mm-dd'
 OMB_USE_SUDO=false
 
 # To enable/disable display of Python virtualenv and condaenv
-# OMB_PROMPT_SHOW_PYTHON_VENV=true  # enable
-# OMB_PROMPT_SHOW_PYTHON_VENV=false # disable
+OMB_PROMPT_SHOW_PYTHON_VENV=true  # enable
 
 # Which completions would you like to load? (completions can be found in ~/.oh-my-bash/completions/*)
 # Custom completions may be added to ~/.oh-my-bash/custom/completions/
-# Example format: completions=(ssh git bundler gem pip pip3)
-# Add wisely, as too many completions slow down shell startup.
 completions=(
   git
   ssh
@@ -115,6 +104,7 @@ alias lg=lazygit
 alias scpresume="rsync --partial --progress --rsh=ssh --human-readable"
 alias rcopy="rsync --partial --progress --append --rsh=ssh --recursive --human-readable"
 alias rmove="rsync --partial --progress --append --rsh=ssh --recursive --human-readable --remove-source-files"
+alias less="less -SRXc"
 
 # check for neovim and set alias if installed
 nvim_locations=(/usr/bin/nvim /opt/homebrew/bin/nvim)
@@ -143,5 +133,5 @@ export CLICOLOR_FORCE=1
 
 export PATH=$PATH:~/.local/bin:/usr/local/bin:~/.fzf/bin:/usr/local/share/dotnet:~/.dotnet/tools:~/.config/tmux/plugins/tmuxifier/bin
 
-eval "$(tmuxifier init -)"
+[ -f ~/.config/tmux/plugins/tmuxifier/bin/tmuxifier ] && eval "$(tmuxifier init -)"
 alias tmi=tmuxifier
