@@ -32,19 +32,9 @@ vim.api.nvim_create_autocmd('LspAttach', {
     vim.keymap.set('n', '<leader>gd', vim.lsp.buf.definition, { buffer = ev.buf, desc = "Goto definition"})
     vim.keymap.set('n', '<leader>K', vim.lsp.buf.hover, { buffer = ev.buf, desc = "Info on keyword under cursor"})
     vim.keymap.set('n', '<leader>gi', vim.lsp.buf.implementation, { buffer = ev.buf, desc = "Goto implementation"})
-    -- vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, opts)
-    -- vim.keymap.set('n', '<leader>wa', vim.lsp.buf.add_workspace_folder, opts)
-    -- vim.keymap.set('n', '<leader>wr', vim.lsp.buf.remove_workspace_folder, opts)
-    -- vim.keymap.set('n', '<leader>wl', function()
-    --   print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
-    -- end, opts)
-    vim.keymap.set('n', '<leader>D', vim.lsp.buf.type_definition, { buffer = ev.buf, desc = "Goto type definition"})
     vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, { buffer = ev.buf, desc = "Rename buffer"})
     vim.keymap.set({ 'n', 'v' }, '<leader>ca', vim.lsp.buf.code_action, { buffer = ev.buf, desc = "Code Actions"})
     vim.keymap.set('n', '<leader>gr', vim.lsp.buf.references, { buffer = ev.buf, desc = "List references"})
-    -- vim.keymap.set('n', '<leader>f', function()
-    --   vim.lsp.buf.format { async = true }
-    -- end, opts)
   end,
 })
 
