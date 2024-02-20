@@ -1,5 +1,5 @@
 return {
-   {
+  {
     "NeogitOrg/neogit",
     dependencies = {
       "nvim-lua/plenary.nvim",         -- required
@@ -10,7 +10,16 @@ return {
       local ngit = require("neogit")
 
       ngit.setup({
-        kind = 'vsplit'
+        kind = 'vsplit',
+        signs = {
+          -- { CLOSED, OPENED }
+--          hunk = { "", "" },
+          hunk = { "", "" },
+--          item = { "", "" },
+--          section = { "", "" },
+          item = { "󰍜", "󰮫" },
+          section = { "󰍜", "󰮫" },
+        },
       })
     end
   },
