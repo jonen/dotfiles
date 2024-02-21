@@ -10,3 +10,20 @@ vim.opt.termguicolors = true
 
 -- set clipboard
 vim.opt.clipboard = "unnamedplus"
+
+-- markdown
+vim.g.markdown_fenced_languages = {
+  'html',
+  'python',
+  'lua',
+  'vim',
+  'typescript',
+  'javascript',
+  'sh',
+  'bash',
+  'cpp',
+  'lisp',
+  'lua',
+  'make',
+  'cmake'
+}
