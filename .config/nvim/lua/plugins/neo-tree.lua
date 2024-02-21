@@ -9,7 +9,14 @@ return {
   config = function()
     vim.keymap.set('n', '<C-n>', ':Neotree toggle<CR>')
     require("neo-tree").setup({
-      hijack_netrw_behavior = "open_default"
+      hijack_netrw_behavior = "open_default",
+      filesystem = {
+        filtered_items = {
+          visible = true,
+          hide_dotfiles = false,
+          hide_gitignored = true,
+        },
+      }
     })
   end
 }
