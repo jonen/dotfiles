@@ -1,16 +1,8 @@
 return {
   "rcarriga/nvim-notify",
-  keys = {
-    {
-      "<leader>un",
-      function()
-        require("notify").dismiss({ silent = true, pending = true })
-      end,
-      desc = "Dismiss all Notifications",
-    },
-  },
   opts = {
     timeout = 3000,
+    render = "minimal",
     max_height = function()
       return math.floor(vim.o.lines * 0.75)
     end,

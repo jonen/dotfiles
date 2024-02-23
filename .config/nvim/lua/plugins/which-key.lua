@@ -8,12 +8,12 @@ return {
   opts = {
   },
   config = function ()
-    local wk = require("which-key")
-    wk.register({
+    require("which-key").register({
       ["<leader>b"] = {
         name = "+buffer",
         c = { ":BufferClose<CR>", "Close current buffer" },
         i = { "migg=`i", "Indent current buffer"},
+        o = { "<CMD>%bd|e#|bd#<CR>|'\"", "Close all other buffers" }, -- https://stackoverflow.com/a/60948057
       },
       ["<leader>c"] = {
         name = "+code",
@@ -29,9 +29,10 @@ return {
       },
       ["<leader>f"] = {
         name = "+file",
-        f = { "<cmd>Telescope find_files<cr>", "Find file" },
-        n = { "<cmd>enew<cr>", "New File" },
-        r = { "<cmd>Telescope oldfiles<cr>", "Open recent file" },
+        f = { "<CMD>Telescope find_files<CR>", "Find file" },
+        g = { "<CMD>Telescope live_grep<CR>", "Grep files" },
+        n = { "<CMD>enew<cr>", "New File" },
+        r = { "<CMD>Telescope oldfiles<cr>", "Open recent file" },
         s = { ":w<CR>", "Save current file"}
       },
       ["<leader>g"] = {
@@ -39,11 +40,24 @@ return {
         b = { ":Gitsigns toggle_current_line_blame<CR>", "Toggle git blame on line"},
         s = { ":Neogit<CR>", "Neogit status"},
       },
+      ["<leader>n"] = {
+        name = "+notifications",
+        d = { function() require("notify").dismiss({silent=true,pending=true}) end, "Dismiss all notifications"},
+        s = { "<CMD>Telescope notify<CR>", "Show all notifications"},
+      },
       ["<leader>q"] = {
         name = "+quit",
         f = { ":qa!<CR>", "Quit (force, no save)"},
         q = {":qa<CR>", "Quit"},
         s = {":wqa<CR>", "Quit (and save all)"},
+      },
+      ["<leader>t"] = {
+        name = "+tab",
+        ["1"] = { "<CMD>BufferGoto 1<CR>", "Goto tab 1"},
+        ["2"] = { "<CMD>BufferGoto 2<CR>", "Goto tab 2"},
+        ["3"] = { "<CMD>BufferGoto 3<CR>", "Goto tab 3"},
+        ["4"] = { "<CMD>BufferGoto 4<CR>", "Goto tab 4"},
+        ["5"] = { "<CMD>BufferGoto 5<CR>", "Goto tab 5"},
       },
       ["<leader>v"] = {
         name = '+venv',
