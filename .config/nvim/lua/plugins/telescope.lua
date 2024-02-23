@@ -13,9 +13,12 @@ return {
     opts = {
       extensions = {
         cmdline = {
+          overseer    = {
+            enabled = false,
+          },
           picker = {
             layout_config = {
-              width  = 60,
+              width  = 90,
               height = 15,
             }
           },
@@ -31,8 +34,8 @@ return {
       require("telescope").setup(opts)
       require("telescope").load_extension("cmdline")
       local builtin = require("telescope.builtin")
-      vim.keymap.set('n', '<leader>ff', builtin.find_files, {desc = "Find files"})
-      vim.keymap.set('n', '<leader>fg', builtin.live_grep, {desc = "Live grep files"})
+--      vim.keymap.set('n', '<leader>ff', builtin.find_files, {desc = "Find files"})
+--      vim.keymap.set('n', '<leader>fg', builtin.live_grep, {desc = "Live grep files"})
     end
   },
   {
