@@ -12,7 +12,7 @@ return {
       ["<leader>b"] = {
         name = "+buffer",
         c = { ":BufferClose<CR>", "Close current buffer" },
-        i = { "migg=`i", "Indent current buffer"},
+        i = { "gg=G``", "Indent current buffer"}, -- indent and keep current cursor position
         o = { "<CMD>%bd|e#|bd#<CR>|'\"", "Close all other buffers" }, -- https://stackoverflow.com/a/60948057
       },
       ["<leader>c"] = {
