@@ -11,3 +11,11 @@
     ```
 - neovim
 - ripgrep
+- autoenv
+    ```sh
+    $ git clone 'https://github.com/hyperupcall/autoenv' ~/.autoenv
+    ```
+- fd
+    ```sh
+    brew install fd
+    ```
