@@ -7,6 +7,15 @@ vim.opt.cursorline = true
 vim.g.mapleader = " "
 vim.opt.hlsearch = false
 vim.opt.termguicolors = true
+vim.opt.scrolloff = 8
+vim.opt.sidescrolloff = 5
+
+-- stay in indent mode
+vim.keymap.set("v", "<", "<gv")
+vim.keymap.set("v", ">", ">gv")
+
+-- replace doesn't copy to clipboard
+vim.keymap.set("x", "p", [["_dP]])
 
 -- set clipboard
 vim.opt.clipboard = "unnamedplus"

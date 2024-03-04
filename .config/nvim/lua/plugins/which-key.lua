@@ -12,6 +12,7 @@ return {
       ["<leader>b"] = {
         name = "+buffer",
         c = { ":BufferClose<CR>", "Close current buffer" },
+        d = { ":BufferClose<CR>", "Close current buffer" },
         i = { "gg=G``", "Indent current buffer"}, -- indent and keep current cursor position
         o = { "<CMD>BufferCloseAllButCurrent<CR>|'\"", "Close all other buffers" },
       },
@@ -23,6 +24,8 @@ return {
           d = { vim.lsp.buf.definition, "Goto definition"},
           D = { vim.lsp.buf.declaration, "Goto declaration"},
           i = { vim.lsp.buf.implementation, "Goto implementation"},
+          n = { vim.diagnostic.goto_next, "Goto next diagnostic"},
+          p = { vim.diagnostic.goto_prev, "Goto previous diagnostic"},
         },
         i = { vim.lsp.buf.hover, "Show information"},
         r = { vim.lsp.buf.references, "List references"},
