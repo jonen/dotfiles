@@ -93,11 +93,11 @@ export LANG="en_US.UTF-8"
 
 # Aliases
 
+alias ls=lsd
 alias ll='ls -lah'
 alias l='ls -lh'
 alias lsa='ls -lah'
 alias la='ls -lA'
-alias lsd='ls -d */'
 
 alias lg=lazygit
 
@@ -136,7 +136,5 @@ export PATH=$PATH:~/.local/bin:/usr/local/bin:~/.fzf/bin:/usr/local/share/dotnet
 [ -f ~/.config/tmux/plugins/tmuxifier/bin/tmuxifier ] && eval "$(tmuxifier init -)"
 alias tmi=tmuxifier
 
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
-
 source ~/.autoenv/activate.sh
+AUTOENV_ENABLE_LEAVE=true
