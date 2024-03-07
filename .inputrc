@@ -14,3 +14,5 @@ set show-mode-in-prompt on
 set vi-ins-mode-string [INS]\ \1\e[1 q\2
 set vi-cmd-mode-string [CMD]\ \1\e[2 q\2
 
+set show-all-if-ambiguous on
+set completion-ignore-case on

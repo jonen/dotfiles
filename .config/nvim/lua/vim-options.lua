@@ -7,6 +7,15 @@ vim.opt.cursorline = true
 vim.g.mapleader = " "
 vim.opt.hlsearch = false
 vim.opt.termguicolors = true
+vim.opt.scrolloff = 8
+vim.opt.sidescrolloff = 5
+
+-- stay in indent mode
+vim.keymap.set("v", "<", "<gv")
+vim.keymap.set("v", ">", ">gv")
+
+-- replace doesn't copy to clipboard
+vim.keymap.set("x", "p", [["_dP]])
 
 -- set clipboard
 vim.opt.clipboard = "unnamedplus"
@@ -27,3 +36,15 @@ vim.g.markdown_fenced_languages = {
   'make',
   'cmake'
 }
+
+-- Highlight when yanking (copying) text
+--  Try it with `yap` in normal mode
+--  See `:help vim.highlight.on_yank()`
+vim.api.nvim_create_autocmd('TextYankPost', {
+  desc = 'Highlight when yanking (copying) text',
+  group = vim.api.nvim_create_augroup('kickstart-highlight-yank', { clear = true }),
+  callback = function()
+    vim.highlight.on_yank()
+  end,
+})
+

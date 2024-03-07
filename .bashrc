@@ -95,11 +95,11 @@ export LANG="en_US.UTF-8"
 
 # Aliases
 
+alias ls=lsd
 alias ll='ls -lah'
 alias l='ls -lh'
 alias lsa='ls -lah'
 alias la='ls -lA'
-alias lsd='ls -d */'
 
 alias lg=lazygit
 
