@@ -73,6 +73,8 @@ aliases=(
 plugins=(
   git
   bashmarks
+  brew
+  progress
 )
 
 # Which plugins would you like to conditionally load? (plugins can be found in ~/.oh-my-bash/plugins/*)
@@ -139,4 +141,5 @@ alias tmi=tmuxifier
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
-source ~/.autoenv/activate.sh
+[ -f ~/.autoenv/activate.sh ] && source ~/.autoenv/activate.sh
+[ -f /opt/homebrew/opt/autoenv/activate.sh ] && source '/opt/homebrew/opt/autoenv/activate.sh'
