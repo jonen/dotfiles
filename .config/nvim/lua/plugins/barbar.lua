@@ -8,7 +8,6 @@ return {
   opts = {
     auto_hide = 1,
     clickable = true,
-    focus_on_close = 'left',
     modified = { button = '●' },
     no_name_title = 'Untitled',
     preset = 'powerline',
