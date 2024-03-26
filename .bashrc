@@ -9,6 +9,7 @@ export OSH=~/.oh-my-bash
 
 # Set name of the theme to load. 
 OSH_THEME="powerline-multiline"
+OSH_THEME="catppuccin-multiline"
 
 # Uncomment the following line to disable bi-weekly auto-update checks.
 # DISABLE_AUTO_UPDATE="true"
