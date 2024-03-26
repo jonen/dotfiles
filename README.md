@@ -19,3 +19,7 @@
     ```sh
     brew install fd
     ```
+- poetry
+    ```sh
+    curl -sSL https://install.python-poetry.org | POETRY_HOME=~/.local/share/pypoetry python3 -
+    ``
