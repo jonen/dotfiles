@@ -11,6 +11,8 @@ return {
     modified = { button = '●' },
     no_name_title = 'Untitled',
     preset = 'powerline',
+    focus_on_close = 'previous',
+    insert_at_end = true,
     sidebar_filetypes = {
       ['neo-tree'] = { event = 'BufWipeout' },
     },
