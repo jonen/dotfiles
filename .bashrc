@@ -150,6 +150,6 @@ alias tmi=tmuxifier
 [ -f ~/.autoenv/activate.sh ] && source ~/.autoenv/activate.sh
 [ -f /opt/homebrew/opt/autoenv/activate.sh ] && source '/opt/homebrew/opt/autoenv/activate.sh'
 
-export PATH="/Users/jon/.local/share/pypoetrPOETRY_VIRTUALENVS_PROMPTy/bin:$PATH"
+export PATH="/Users/jon/.local/share/pypoetry/bin:$PATH"
 export POETRY_VIRTUALENVS_IN_PROJECT=1
 export POETRY_VIRTUALENVS_PROMPT={project_name}-py{python_version}
