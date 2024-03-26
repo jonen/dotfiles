@@ -8,7 +8,7 @@ esac
 export OSH=~/.oh-my-bash
 
 # Set name of the theme to load. 
-OSH_THEME="powerline-multiline"
+OSH_THEME="catppuccin-multiline"
 
 # Uncomment the following line to disable bi-weekly auto-update checks.
 # DISABLE_AUTO_UPDATE="true"
@@ -56,6 +56,14 @@ completions=(
   ssh
   tmux
   pip3
+  pip
+  brew
+  defaults
+  dirs
+  docker
+  docker-compose
+  docker-machine
+  system
 )
 
 # Which aliases would you like to load? (aliases can be found in ~/.oh-my-bash/aliases/*)
@@ -64,6 +72,7 @@ completions=(
 # Add wisely, as too many aliases slow down shell startup.
 aliases=(
   general
+
 )
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-bash/plugins/*)
@@ -143,3 +152,7 @@ eval "$(pyenv virtualenv-init -)"
 
 [ -f ~/.autoenv/activate.sh ] && source ~/.autoenv/activate.sh
 [ -f /opt/homebrew/opt/autoenv/activate.sh ] && source '/opt/homebrew/opt/autoenv/activate.sh'
+
+export PATH="/Users/jon/.local/share/pypoetrPOETRY_VIRTUALENVS_PROMPTy/bin:$PATH"
+export POETRY_VIRTUALENVS_IN_PROJECT=1
+export POETRY_VIRTUALENVS_PROMPT={project_name}-py{python_version}
