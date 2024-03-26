@@ -20,7 +20,7 @@ name = "Jonathan Gross"
 email = "jonathan.gross@uni-leipzig.de"
 
 [template.licenses]
-headers = true
+headers = false
 default = [
     "MIT",
 ]
