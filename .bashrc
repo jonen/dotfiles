@@ -56,6 +56,14 @@ completions=(
   ssh
   tmux
   pip3
+  pip
+  brew
+  defaults
+  dirs
+  docker
+  docker-compose
+  docker-machine
+  system
 )
 
 # Which aliases would you like to load? (aliases can be found in ~/.oh-my-bash/aliases/*)
