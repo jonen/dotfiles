@@ -17,6 +17,17 @@ return {
         o = { "<CMD>BufferCloseAllButCurrent<CR>|'\"", "Close all other buffers" },
         n = { "<CMD>bn<CR>", "Next buffer" },
         p = { "<CMD>bp<CR>", "Previous buffer" },
+        ["1"] = { "<CMD>BufferGoto 1<CR>", "Goto buffer 1" },
+        ["2"] = { "<CMD>BufferGoto 2<CR>", "Goto buffer 2" },
+        ["3"] = { "<CMD>BufferGoto 3<CR>", "Goto buffer 3" },
+        ["4"] = { "<CMD>BufferGoto 4<CR>", "Goto buffer 4" },
+        ["5"] = { "<CMD>BufferGoto 5<CR>", "Goto buffer 5" },
+        ["6"] = { "<CMD>BufferGoto 5<CR>", "Goto buffer 6" },
+        ["7"] = { "<CMD>BufferGoto 5<CR>", "Goto buffer 7" },
+        ["8"] = { "<CMD>BufferGoto 5<CR>", "Goto buffer 8" },
+        ["9"] = { "<CMD>BufferGoto 5<CR>", "Goto buffer 9" },
+        ["0"] = { "<CMD>BufferLast<CR>", "Goto last buffer" },
+
       },
       ["<leader>c"] = {
         name = "+code",
@@ -60,14 +71,6 @@ return {
         f = { ":qa!<CR>", "Quit (force, no save)" },
         q = { ":qa<CR>", "Quit" },
         s = { ":wqa<CR>", "Quit (and save all)" },
-      },
-      ["<leader>t"] = {
-        name = "+tab",
-        ["1"] = { "<CMD>BufferGoto 1<CR>", "Goto tab 1" },
-        ["2"] = { "<CMD>BufferGoto 2<CR>", "Goto tab 2" },
-        ["3"] = { "<CMD>BufferGoto 3<CR>", "Goto tab 3" },
-        ["4"] = { "<CMD>BufferGoto 4<CR>", "Goto tab 4" },
-        ["5"] = { "<CMD>BufferGoto 5<CR>", "Goto tab 5" },
       },
       ["<leader>v"] = {
         name = '+venv',
