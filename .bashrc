@@ -104,7 +104,10 @@ export LANG="en_US.UTF-8"
 
 # Aliases
 
-alias ls=lsd
+lsd_installed=$(which lsd)
+if [ -x "$lsd_installed" ] ; then
+  alias ls=lsd
+fi
 alias ll='ls -lah'
 alias l='ls -lh'
 alias lsa='ls -lah'
