@@ -158,4 +158,5 @@ export POETRY_VIRTUALENVS_IN_PROJECT=1
 export POETRY_VIRTUALENVS_PROMPT={project_name}-py{python_version}
 
 eval "$(starship init bash)"
-. "$HOME/.cargo/env"
+[ -f "$HOME/.cargo/env" ] && . "$HOME/.cargo/env"
+
