@@ -2,7 +2,10 @@
 
 ## Prereqs
 
-- bash
+- homebrew (macOS)
+    ```sh
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    ```
 - oh-my-bash (fedora)
     ```sh
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmybash/oh-my-bash/master/tools/install.sh)"
@@ -58,7 +61,7 @@
 - poetry
     ```sh
     curl -sSL https://install.python-poetry.org | POETRY_HOME=~/.local/share/pypoetry python3 -
-    ``
+    ```
 - starship
     ```sh
     curl -fsSL https://starship.rs/install.sh | sh
