@@ -153,3 +153,5 @@ alias tmi=tmuxifier
 export PATH="/Users/jon/.local/share/pypoetry/bin:$PATH"
 export POETRY_VIRTUALENVS_IN_PROJECT=1
 export POETRY_VIRTUALENVS_PROMPT={project_name}-py{python_version}
+
+eval "$(starship init bash)"
