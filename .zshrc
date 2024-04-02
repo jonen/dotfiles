@@ -88,4 +88,7 @@ znap source marlonrichert/zsh-autocomplete
 # `znap eval` makes evaluating generated command output up to 10 times faster.
 znap eval iterm2 'curl -fsSL https://iterm2.com/shell_integration/zsh'
 
+# Rust
+. "$HOME/.cargo/env"
+
 eval "$(starship init zsh)"
