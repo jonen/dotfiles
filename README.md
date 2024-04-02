@@ -4,6 +4,13 @@
 
 - bash
 - oh-my-bash
+    ```sh
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmybash/oh-my-bash/master/tools/install.sh)"
+    ```
+- oh-my-zsh
+    ```sh
+    sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+    ```
 - tmux with tpm
     - https://github.com/tmux-plugins/tpm
     ```sh
@@ -23,3 +30,14 @@
     ```sh
     curl -sSL https://install.python-poetry.org | POETRY_HOME=~/.local/share/pypoetry python3 -
     ``
+- starship
+    ```sh
+    curl -fsSL https://starship.rs/install.sh | bash
+    ```
+- lazygit (fedora)
+    ```sh
+    sudo dnf copr enable atim/lazygit -y
+    sudo dnf install lazygit -y
+    ```
+
+
