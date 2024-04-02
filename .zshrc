@@ -11,7 +11,7 @@ export ZSH=$HOME/.oh-my-zsh
 export DISABLE_AUTO_UPDATE="false"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-plugins=(brew git gitfast macos extract cp vi-mode zsh-syntax-highlighting history-substring-search tmux tmuxinator zsh-dotnet-completion)
+plugins=(brew git gitfast macos extract cp vi-mode zsh-syntax-highlighting history-substring-search tmux poetry zsh-dotnet-completion)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -35,6 +35,9 @@ alias rmove="rsync --partial --progress --append --rsh=ssh --recursive --human-r
 alias pylab="ipython qtconsole --pylab"
 
 alias sudoedit="sudo -e"
+
+alias c=clear
+alias lg=lazygit
 
 alias rake='noglob rake'
 eval "$(pyenv init -)"
@@ -77,5 +80,12 @@ alias tmi=tmuxifier
 export PATH="/Users/jon/.local/share/pypoetry/bin:$PATH"
 export POETRY_VIRTUALENVS_IN_PROJECT=1
 export POETRY_VIRTUALENVS_PROMPT={project_name}-py{python_version}
+
+# Znap package manager
+source ~/.config/zsh-plugins/zsh-snap/znap.zsh
+znap source marlonrichert/zsh-autocomplete
+
+# `znap eval` makes evaluating generated command output up to 10 times faster.
+znap eval iterm2 'curl -fsSL https://iterm2.com/shell_integration/zsh'
 
 eval "$(starship init zsh)"
