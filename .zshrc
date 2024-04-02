@@ -2,7 +2,6 @@ export LC_ALL="en_US.UTF-8"
 export LANG="en_US.UTF-8"
 
 export ZSH=$HOME/.oh-my-zsh
-#export ZSH_THEME="jonen"
 
 # Set to this to use case-sensitive completion
 # export CASE_SENSITIVE="true"
@@ -11,7 +10,7 @@ export ZSH=$HOME/.oh-my-zsh
 export DISABLE_AUTO_UPDATE="false"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-plugins=(brew git gitfast macos extract cp vi-mode zsh-syntax-highlighting history-substring-search tmux poetry zsh-dotnet-completion)
+plugins=(rust brew git gitfast macos extract cp vi-mode zsh-syntax-highlighting history-substring-search tmux poetry zsh-dotnet-completion)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -82,9 +81,8 @@ export POETRY_VIRTUALENVS_IN_PROJECT=1
 export POETRY_VIRTUALENVS_PROMPT={project_name}-py{python_version}
 
 # Znap package manager
-source ~/.config/zsh-plugins/zsh-snap/znap.zsh
+[ -f ~/.config/zsh-plugins/zsh-snap/znap.zsh ] && source ~/.config/zsh-plugins/zsh-snap/znap.zsh
 znap source marlonrichert/zsh-autocomplete
-
 # `znap eval` makes evaluating generated command output up to 10 times faster.
 znap eval iterm2 'curl -fsSL https://iterm2.com/shell_integration/zsh'
 
