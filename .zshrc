@@ -31,15 +31,12 @@ alias la='ls -lA'
 alias scpresume="rsync --partial --progress --rsh=ssh --human-readable"
 alias rcopy="rsync --partial --progress --append --rsh=ssh --recursive --human-readable"
 alias rmove="rsync --partial --progress --append --rsh=ssh --recursive --human-readable --remove-source-files"
-alias pylab="ipython qtconsole --pylab"
 
 alias sudoedit="sudo -e"
 
 alias c=clear
 alias lg=lazygit
 
-alias rake='noglob rake'
-eval "$(pyenv init -)"
 function most_useless_use_of_zsh {
    local lines columns colour a b p q i pnew
    ((columns=COLUMNS-1, lines=LINES-1, colour=0))
