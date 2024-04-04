@@ -17,3 +17,7 @@ decorations = "Buttonless"
 dimensions = { columns = 200, lines = 55 }
 dynamic_title = false
 title = "Alacritty"
+
+[cursor]
+style = { shape="Block", blinking="Always"}
+
