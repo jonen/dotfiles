@@ -82,8 +82,6 @@ export POETRY_VIRTUALENVS_PROMPT={project_name}-py{python_version}
 znap source marlonrichert/zsh-autocomplete
 znap source zsh-users/zsh-syntax-highlighting
 znap source memark/zsh-dotnet-completion
-# `znap eval` makes evaluating generated command output up to 10 times faster.
-znap eval iterm2 'curl -fsSL https://iterm2.com/shell_integration/zsh'
 
 # Rust
 [ -f ~/.cargo/env ] && . "$HOME/.cargo/env"
