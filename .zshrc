@@ -57,9 +57,9 @@ function most_useless_use_of_zsh {
 export XDG_CONFIG_HOME=~/.config
 
 # Reset colors
-unset LSCOLORS
-export CLICOLOR=1
-export CLICOLOR_FORCE=1
+#unset LSCOLORS
+#export CLICOLOR=1
+#export CLICOLOR_FORCE=1
 
 # set homebrew env on macOS
 [ -f /opt/homebrew/bin/brew ] && eval "$(/opt/homebrew/bin/brew shellenv)"
@@ -86,17 +86,23 @@ znap source zsh-users/zsh-autosuggestions
 znap source zsh-users/zsh-syntax-highlighting
 znap source memark/zsh-dotnet-completion
 
-# delay zsh autocomplete suggestions by 1 second
-zstyle ':autocomplete:*' delay 1
+zstyle ':autocomplete:*' delay 0.1
 
-# disable god aweful zsh autocomplete multi-line history
-bindkey '\e[A' up-history
-bindkey '\eOA' up-history
-bindkey '\e[B' down-history
-bindkey '\eOB' down-history
+# disable god-awful zsh autocomplete multi-line history
+ bindkey '\e[A' history-beginning-search-backward
+ bindkey '\eOA' history-beginning-search-backward
+ bindkey '\e[B' history-beginning-search-forward
+ bindkey '\eOB' history-beginning-search-forward
+# zle -A {.,}history-incremental-search-forward
+# zle -A {.,}history-incremental-search-backward
 
-# use tab to accept autosuggestions
-bindkey '^I' autosuggest-accept
+
+bindkey '^Y' autosuggest-accept
+bindkey              '^I'         menu-complete
+bindkey "$terminfo[kcbt]" reverse-menu-complete
+
+bindkey -M menuselect              '^I'         menu-complete
+bindkey -M menuselect "$terminfo[kcbt]" reverse-menu-complete
 
 # Rust
 [ -f ~/.cargo/env ] && . "$HOME/.cargo/env"
