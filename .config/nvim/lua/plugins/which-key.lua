@@ -73,6 +73,7 @@ return {
         d = { "<CMD>ObsidianDailies<CR>", "Daily notes" },
         l = { "<CMD>ObsidianLinks<CR>", "Links" },
         n = { "<CMD>ObsidianNew<CR>", "New note" },
+        o = { "<CMD>ObsidianOpen<CR>", "Open Obsidian.app" },
         s = { "<CMD>ObsidianSearch<CR>", "Search notes" },
         t = { "<CMD>ObsidianToday<CR>", "Today" },
         y = { "<CMD>ObsidianYesterday<CR>", "Yesterday" },
