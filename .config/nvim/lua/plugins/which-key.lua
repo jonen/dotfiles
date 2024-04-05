@@ -66,6 +66,16 @@ return {
         d = { function() require("notify").dismiss({ silent = true, pending = true }) end, "Dismiss all notifications" },
         s = { "<CMD>Telescope notify<CR>", "Show all notifications" },
       },
+      ["<leader>o"] = {
+        name = "Obsidian",
+        c = { "<CMD>ObsidianToggleCheckbox<CR>", "Toggle Checkbox" },
+        d = { "<CMD>ObsidianDailies<CR>", "Daily notes" },
+        l = { "<CMD>ObsidianFollowLink<CR>", "Follow link" },
+        n = { "<CMD>ObsidianNewNote<CR>", "New note" },
+        s = { "<CMD>ObsidianSearch<CR>", "Search notes" },
+        t = { "<CMD>ObsidianToday<CR>", "Today" },
+        y = { "<CMD>ObsidianYesterday<CR>", "Yesterday" },
+      },
       ["<leader>q"] = {
         name = "+quit",
         f = { ":qa!<CR>", "Quit (force, no save)" },
