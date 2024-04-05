@@ -36,7 +36,8 @@ vim.g.markdown_fenced_languages = {
   'lisp',
   'lua',
   'make',
-  'cmake'
+  'cmake',
+  'rust',
 }
 
 -- Highlight when yanking (copying) text

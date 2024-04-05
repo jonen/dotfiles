@@ -8,7 +8,6 @@ return {
   opts = {
     -- Your options go here
     name = { ".venv" },
-    hatch_path = "~/.local/share/hatch/env/virtual",
     auto_refresh = true,
     vim.api.nvim_create_autocmd('VimEnter', {
       desc = 'Auto select virtualenv Nvim open',
