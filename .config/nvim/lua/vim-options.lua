@@ -10,6 +10,7 @@ vim.opt.termguicolors = true
 vim.opt.scrolloff = 8
 vim.opt.sidescrolloff = 5
 vim.opt.conceallevel = 2
+vim.opt.background = "dark"
 
 -- stay in indent mode
 vim.keymap.set("v", "<", "<gv")
