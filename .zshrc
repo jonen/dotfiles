@@ -14,6 +14,8 @@ plugins=(rust brew git gitfast macos extract cp vi-mode history-substring-search
 
 source $ZSH/oh-my-zsh.sh
 
+
+alias vim=nvim
 export EDITOR=nvim
 export VISUAL=nvim
 
@@ -80,8 +82,21 @@ export POETRY_VIRTUALENVS_PROMPT={project_name}-py{python_version}
 # Znap package manager
 [ -f ~/.config/zsh-plugins/zsh-snap/znap.zsh ] && source ~/.config/zsh-plugins/zsh-snap/znap.zsh
 znap source marlonrichert/zsh-autocomplete
+znap source zsh-users/zsh-autosuggestions
 znap source zsh-users/zsh-syntax-highlighting
 znap source memark/zsh-dotnet-completion
+
+# delay zsh autocomplete suggestions by 1 second
+zstyle ':autocomplete:*' delay 1
+
+# disable god aweful zsh autocomplete multi-line history
+bindkey '\e[A' up-history
+bindkey '\eOA' up-history
+bindkey '\e[B' down-history
+bindkey '\eOB' down-history
+
+# use tab to accept autosuggestions
+bindkey '^I' autosuggest-accept
 
 # Rust
 [ -f ~/.cargo/env ] && . "$HOME/.cargo/env"
