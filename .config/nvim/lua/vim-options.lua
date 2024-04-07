@@ -24,29 +24,29 @@ vim.opt.clipboard = "unnamedplus"
 
 -- markdown
 vim.g.markdown_fenced_languages = {
-  'html',
-  'python',
-  'lua',
-  'vim',
-  'typescript',
-  'javascript',
-  'sh',
-  'bash',
-  'cpp',
-  'lisp',
-  'lua',
-  'make',
-  'cmake',
-  'rust',
+	"html",
+	"python",
+	"lua",
+	"vim",
+	"typescript",
+	"javascript",
+	"sh",
+	"bash",
+	"cpp",
+	"lisp",
+	"lua",
+	"make",
+	"cmake",
+	"rust",
 }
 
 -- Highlight when yanking (copying) text
 --  Try it with `yap` in normal mode
 --  See `:help vim.highlight.on_yank()`
-vim.api.nvim_create_autocmd('TextYankPost', {
-  desc = 'Highlight when yanking (copying) text',
-  group = vim.api.nvim_create_augroup('kickstart-highlight-yank', { clear = true }),
-  callback = function()
-    vim.highlight.on_yank()
-  end,
+vim.api.nvim_create_autocmd("TextYankPost", {
+	desc = "Highlight when yanking (copying) text",
+	group = vim.api.nvim_create_augroup("kickstart-highlight-yank", { clear = true }),
+	callback = function()
+		vim.highlight.on_yank()
+	end,
 })

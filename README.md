@@ -3,17 +3,21 @@
 ## Prereqs
 
 - homebrew (macOS)
-    ```sh
-    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-    ```
+```sh
+/bin/bash -c '$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)'
+```
 - oh-my-bash (fedora)
-    ```sh
-    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmybash/oh-my-bash/master/tools/install.sh)"
-    ```
+```sh
+sh -c '$(curl -fsSL https://raw.githubusercontent.com/ohmybash/oh-my-bash/master/tools/install.sh)'
+```
 - oh-my-zsh (macOS)
-    ```sh
-    sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-    ```
+```sh
+sh -c '$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)'
+```
+- znap
+```sh
+git clone --depth 1 https://github.com/marlonrichert/zsh-snap.git ~/.config/zsh-plugins/zsh-snap
+```
 - tmux
     - macOS
     ```sh
@@ -47,7 +51,7 @@
     ```
 - autoenv
     ```sh
-    $ git clone 'https://github.com/hyperupcall/autoenv' ~/.autoenv
+    git clone 'https://github.com/hyperupcall/autoenv' ~/.autoenv
     ```
 - fd 
     - macOS
