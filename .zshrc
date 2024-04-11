@@ -14,7 +14,6 @@ plugins=(rust brew git gitfast macos extract cp vi-mode history-substring-search
 
 source $ZSH/oh-my-zsh.sh
 
-
 alias vim=nvim
 export EDITOR=nvim
 export VISUAL=nvim
@@ -56,11 +55,6 @@ function most_useless_use_of_zsh {
 
 export XDG_CONFIG_HOME=~/.config
 
-# Reset colors
-#unset LSCOLORS
-#export CLICOLOR=1
-#export CLICOLOR_FORCE=1
-
 # set homebrew env on macOS
 [ -f /opt/homebrew/bin/brew ] && eval "$(/opt/homebrew/bin/brew shellenv)"
 
@@ -81,28 +75,8 @@ export POETRY_VIRTUALENVS_PROMPT={project_name}-py{python_version}
 
 # Znap package manager
 [ -f ~/.config/zsh-plugins/zsh-snap/znap.zsh ] && source ~/.config/zsh-plugins/zsh-snap/znap.zsh
-znap source marlonrichert/zsh-autocomplete
-znap source zsh-users/zsh-autosuggestions
 znap source zsh-users/zsh-syntax-highlighting
 znap source memark/zsh-dotnet-completion
-
-zstyle ':autocomplete:*' delay 0.1
-
-# disable god-awful zsh autocomplete multi-line history
- bindkey '\e[A' history-beginning-search-backward
- bindkey '\eOA' history-beginning-search-backward
- bindkey '\e[B' history-beginning-search-forward
- bindkey '\eOB' history-beginning-search-forward
-# zle -A {.,}history-incremental-search-forward
-# zle -A {.,}history-incremental-search-backward
-
-
-bindkey '^Y' autosuggest-accept
-bindkey              '^I'         menu-complete
-bindkey "$terminfo[kcbt]" reverse-menu-complete
-
-bindkey -M menuselect              '^I'         menu-complete
-bindkey -M menuselect "$terminfo[kcbt]" reverse-menu-complete
 
 # Rust
 [ -f ~/.cargo/env ] && . "$HOME/.cargo/env"
