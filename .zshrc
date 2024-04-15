@@ -84,3 +84,10 @@ znap source memark/zsh-dotnet-completion
 [ -f ~/.cargo/env ] && . "$HOME/.cargo/env"
 
 eval "$(starship init zsh)"
+
+# bun completions
+[ -s "/Users/jon/.bun/_bun" ] && source "/Users/jon/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
