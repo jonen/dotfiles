@@ -66,8 +66,10 @@ export PATH=$PATH:~/.local/bin:/usr/local/bin:~/.fzf/bin:/usr/local/share/dotnet
 [ -f ~/.config/tmux/plugins/tmuxifier/bin/tmuxifier ] && eval "$(tmuxifier init -)"
 alias tmi=tmuxifier
 
+# autoenv
 [ -f ~/.autoenv/activate.sh ] && source ~/.autoenv/activate.sh
 [ -f /opt/homebrew/opt/autoenv/activate.sh ] && source '/opt/homebrew/opt/autoenv/activate.sh'
+export AUTOENV_ENABLE_LEAVE="true"
 
 export PATH="/Users/jon/.local/share/pypoetry/bin:$PATH"
 export POETRY_VIRTUALENVS_IN_PROJECT=1
