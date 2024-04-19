@@ -89,6 +89,8 @@ znap source memark/zsh-dotnet-completion
 # Rust
 [ -f ~/.cargo/env ] && . "$HOME/.cargo/env"
 
+alias cat=bat
+
 eval "$(starship init zsh)"
 
 # bun completions
@@ -97,3 +99,4 @@ eval "$(starship init zsh)"
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+
