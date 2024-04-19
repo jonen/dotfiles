@@ -1,0 +1,21 @@
+lastupdatecheck: 0
+recentrepos:
+- /Users/jon/dotfiles
+- /Users/jon/Documents/Projects/new-website/doc_admin
+- /Users/jon/Documents/Projects/new-website/doc_admin/docs/storage
+- /Users/jon/Documents/Projects/new-website/doc_admin/docs/software
+- /Users/jon/Documents/Projects/new-website/doc_admin/docs/usermanagement
+- /Users/jon/Documents/Projects/tscsm
+- /Users/jon/Documents/Projects/new-website/knowledgebase
+- /Users/jon/Documents/Projects/slurm-reports
+- /Users/jon/Library/CloudStorage/OneDrive-UniversitätLeipzig/Notes
+startuppopupversion: 5
+lastversion: 0.41.0
+customcommandshistory: []
+hidecommandlog: false
+ignorewhitespaceindiffview: false
+diffcontextsize: 3
+localbranchsortorder: recency
+remotebranchsortorder: alphabetical
+gitlogorder: topo-order
+gitlogshowgraph: always
