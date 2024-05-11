@@ -80,4 +80,9 @@ git clone --depth 1 https://github.com/marlonrichert/zsh-snap.git ~/.config/zsh-
     sudo dnf copr enable atim/lazygit -y
     sudo dnf install lazygit -y
     ```
+- fzf
+    ```sh
+    git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+    ~/.fzf/install
+    ```
 
