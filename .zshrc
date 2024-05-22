@@ -38,7 +38,6 @@ zinit snippet OMZP::sudo
 zinit snippet OMZP::command-not-found
 zinit snippet OMZP::brew
 zinit snippet OMZP::cp
-zinit snippet OMZP::tmux
 
 # Add in completions
 # poetry
@@ -90,6 +89,9 @@ alias la='ls -lA'
 alias scpresume="rsync --partial --progress --rsh=ssh --human-readable"
 alias rcopy="rsync --partial --progress --append --rsh=ssh --recursive --human-readable"
 alias rmove="rsync --partial --progress --append --rsh=ssh --recursive --human-readable --remove-source-files"
+
+alias vim=nvim
+alias v=nvim
 
 alias sudoedit="sudo -e"
 
