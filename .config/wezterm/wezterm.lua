@@ -1,0 +1,35 @@
+local wezterm = require 'wezterm'
+
+return {
+  window_decorations = "RESIZE",
+  color_scheme = "Catppuccin Mocha",
+
+  use_fancy_tab_bar = false,
+  hide_tab_bar_if_only_one_tab = true,
+
+  font = wezterm.font {
+    family = 'Hack Nerd Font',
+    stretch = 'Normal',
+    weight = 'Regular',
+  },
+  font_size = 15.0,
+
+  automatically_reload_config = false,
+
+  disable_default_key_bindings = true,
+
+  native_macos_fullscreen_mode = true,
+
+  keys = {
+    { key = "n", mods = "CMD", action = wezterm.action.SpawnWindow },
+    { key = "t", mods = "CMD", action = wezterm.action { SpawnTab = "CurrentPaneDomain" } },
+    { key = "w", mods = "CMD", action = wezterm.action { CloseCurrentTab = { confirm = true } } },
+    { key = "h", mods = "CMD", action = wezterm.action { ActivateTabRelative = -1 } },
+    { key = "l", mods = "CMD", action = wezterm.action { ActivateTabRelative = 1 } },
+    { key = "k", mods = "CMD", action = wezterm.action.IncreaseFontSize },
+    { key = "j", mods = "CMD", action = wezterm.action.DecreaseFontSize },
+    { key = "c", mods = "CMD", action = wezterm.action { CopyTo = "Clipboard" } },
+    { key = "v", mods = "CMD", action = wezterm.action { PasteFrom = "Clipboard" } },
+    { key = "f", mods = "CMD", action = wezterm.action.ToggleFullScreen },
+  },
+}
