@@ -53,6 +53,7 @@ autoload -Uz compinit && compinit
 zinit cdreplay -q
 
 # Keybindings
+bindkey -v
 bindkey '^y' autosuggest-accept
 
 # History
@@ -85,6 +86,9 @@ alias ll='ls -lah'
 alias l='ls -lh'
 alias lsa='ls -lah'
 alias la='ls -lA'
+
+alias ..='cd ..'
+alias ...='cd ../..'
 
 alias scpresume="rsync --partial --progress --rsh=ssh --human-readable"
 alias rcopy="rsync --partial --progress --append --rsh=ssh --recursive --human-readable"
