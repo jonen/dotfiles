@@ -14,7 +14,7 @@ fi
 # Set the directory we want to store zinit and plugins
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 
-# Download Zinit, if it's not there yet
+# Download zinit, if not installed already
 if [ ! -d "$ZINIT_HOME" ]; then
    mkdir -p "$(dirname $ZINIT_HOME)"
    git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
@@ -46,6 +46,7 @@ if [ ! -f ~/.zfunc/_poetry ]; then
   poetry completions zsh > ~/.zfunc/_poetry
 fi
 fpath+=~/.zfunc
+fpath+=/opt/homebrew/share/zsh/site-functions
 
 # Load completions
 autoload -Uz compinit && compinit
@@ -80,9 +81,10 @@ zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 alias ls='ls --color'
 lsd_installed=$(which lsd)
 if [ -x "$lsd_installed" ] ; then
-  alias ls=lsd
+  alias ls="lsd --git"
 fi
 alias ll='ls -lah'
+alias lt='ls -lah --tree'
 alias l='ls -lh'
 alias lsa='ls -lah'
 alias la='ls -lA'
