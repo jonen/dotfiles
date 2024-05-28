@@ -5,7 +5,7 @@ add_newline = false
 format = """
 [](surface0)\
 $os\
-$username\
+$username@$hostname\
 [](bg:peach fg:surface0)\
 $directory\
 [](fg:peach bg:green)\
@@ -88,6 +88,11 @@ show_always = true
 style_user = "bg:surface0 fg:text"
 style_root = "bg:surface0 fg:text"
 format = '[ $user ]($style)'
+
+[hostname]
+ssh_only = false
+detect_env_vars = ['SSH_CONNECTION']
+disabled = false
 
 [directory]
 style = "fg:mantle bg:peach"
