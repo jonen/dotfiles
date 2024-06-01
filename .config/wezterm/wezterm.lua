@@ -16,7 +16,7 @@ return {
   font = wezterm.font {
     family = 'Hack Nerd Font',
     stretch = 'Normal',
-    weight = 'Regular',
+    weight = 'Bold',
   },
   font_size = 15.0,
 
