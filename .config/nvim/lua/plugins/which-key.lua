@@ -95,6 +95,10 @@ return {
         q = { ":qa<CR>", "Quit" },
         s = { ":wqa<CR>", "Quit (and save all)" },
       },
+      ["<leader>s"] = {
+        name = "+search",
+        d = { "<CMD>set hlsearch!<CR>", "Toggle search highlight" },
+      },
       ["<leader>v"] = {
         name = "+venv",
         c = { "<cmd>VenvSelectCached<CR>", "Select cached venv" },
