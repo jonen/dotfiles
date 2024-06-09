@@ -103,6 +103,7 @@ alias sudoedit="sudo -e"
 
 alias c=clear
 alias lg=lazygit
+alias y=yazi
 
 [ -f ~/.config/tmux/plugins/tmuxifier/bin/tmuxifier ] && eval "$(tmuxifier init -)"
 alias tmi=tmuxifier
