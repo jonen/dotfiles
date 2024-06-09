@@ -7,22 +7,22 @@ return {
       'jonarrien/telescope-cmdline.nvim',
     },
     keys = {
-      { ':', '<cmd>Telescope cmdline<cr>', desc = 'Cmdline' },
+      { ':',                '<cmd>Telescope cmdline<cr>', desc = 'Cmdline' },
       { '<leader><leader>', '<cmd>Telescope cmdline<cr>', desc = 'Cmdline' }
     },
     opts = {
       extensions = {
         cmdline = {
-          overseer    = {
+          overseer = {
             enabled = false,
           },
-          picker = {
+          picker   = {
             layout_config = {
               width  = 90,
               height = 15,
             }
           },
-          mappings    = {
+          mappings = {
             complete      = '<Tab>',
             run_selection = '<C-CR>',
             run_input     = '<CR>',
