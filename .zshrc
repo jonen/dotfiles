@@ -56,6 +56,8 @@ zinit cdreplay -q
 # Keybindings
 bindkey -v
 bindkey '^y' autosuggest-accept
+autoload edit-command-line; zle -N edit-command-line
+bindkey -M vicmd v edit-command-line
 
 # History
 HISTSIZE=5000
@@ -129,7 +131,7 @@ export POETRY_VIRTUALENVS_PROMPT={project_name}-py{python_version}
 [ -f ~/.cargo/env ] && . "$HOME/.cargo/env"
 
 # autoenv
-[ -f ~/.autoenv/activate.sh ] && source ~/.autoenv/activate.sh
-[ -f /opt/homebrew/opt/autoenv/activate.sh ] && source '/opt/homebrew/opt/autoenv/activate.sh'
-export AUTOENV_ENABLE_LEAVE="true"
+#[ -f ~/.autoenv/activate.sh ] && source ~/.autoenv/activate.sh
+#[ -f /opt/homebrew/opt/autoenv/activate.sh ] && source '/opt/homebrew/opt/autoenv/activate.sh'
+#export AUTOENV_ENABLE_LEAVE="true"
 
