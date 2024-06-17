@@ -2,6 +2,8 @@
 
 add_newline = false
 
+continuation_prompt = " "
+
 format = """
 [](surface0)\
 $os\
