@@ -83,9 +83,9 @@ zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 
 # Aliases
 alias ls='ls --color'
-lsd_installed=$(which lsd)
-if [ -x "$lsd_installed" ] ; then
-  alias ls="lsd --git"
+eza_installed=$(which eza)
+if [ -x "$eza_installed" ] ; then
+  alias ls="eza --git --icons=always"
 fi
 alias ll='ls -lah'
 alias lt='ls -lah --tree'
