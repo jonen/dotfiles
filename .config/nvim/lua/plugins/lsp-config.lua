@@ -13,7 +13,6 @@ return {
 				ensure_installed = {
 					"ruff",
 					"pyright",
-					"clangd",
 					"lua_ls",
 					"rust_analyzer",
 				},
