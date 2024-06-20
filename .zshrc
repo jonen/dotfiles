@@ -87,6 +87,10 @@ eza_installed=$(which eza)
 if [ -x "$eza_installed" ] ; then
   alias ls="eza --git --icons=always"
 fi
+bat_installed=$(which bat)
+if [ -x "$bat_installed" ] ; then
+  alias cat=bat
+fi
 alias ll='ls -lah'
 alias lt='ls -lah --tree'
 alias l='ls -lh'
