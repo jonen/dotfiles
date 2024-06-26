@@ -38,7 +38,12 @@ zinit snippet OMZP::git
 zinit snippet OMZP::sudo
 zinit snippet OMZP::command-not-found
 zinit snippet OMZP::brew
+zinit snippet OMZP::archlinux
+zinit snippet OMZP::docker
+zinit snippet OMZP::docker-compose
 zinit snippet OMZP::cp
+zinit snippet OMZP::colored-man-pages
+zinit snippet OMZP::tmux
 
 # Add in completions
 # poetry
@@ -136,3 +141,5 @@ export POETRY_VIRTUALENVS_PROMPT={project_name}-py{python_version}
 # Rust
 [ -f ~/.cargo/env ] && . "$HOME/.cargo/env"
 
+# TMUX plugin
+ZSH_TMUX_AUTOSTART=true
