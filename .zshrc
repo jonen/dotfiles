@@ -141,5 +141,3 @@ export POETRY_VIRTUALENVS_PROMPT={project_name}-py{python_version}
 # Rust
 [ -f ~/.cargo/env ] && . "$HOME/.cargo/env"
 
-# TMUX plugin
-ZSH_TMUX_AUTOSTART=true
