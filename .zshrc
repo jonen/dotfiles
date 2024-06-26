@@ -43,7 +43,6 @@ zinit snippet OMZP::docker
 zinit snippet OMZP::docker-compose
 zinit snippet OMZP::cp
 zinit snippet OMZP::colored-man-pages
-zinit snippet OMZP::tmux
 
 # Add in completions
 # poetry
