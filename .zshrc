@@ -94,6 +94,7 @@ fi
 bat_installed=$(which bat)
 if [ -x "$bat_installed" ] ; then
   alias cat=bat
+  alias less=bat
 fi
 alias ll='ls -lah'
 alias lt='ls -lah --tree'
