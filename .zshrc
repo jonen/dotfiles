@@ -43,7 +43,6 @@ zinit snippet OMZP::docker
 zinit snippet OMZP::docker-compose
 zinit snippet OMZP::cp
 zinit snippet OMZP::colored-man-pages
-zinit snippet OMZP::tmux
 
 # Add in completions
 # poetry
@@ -95,6 +94,7 @@ fi
 bat_installed=$(which bat)
 if [ -x "$bat_installed" ] ; then
   alias cat=bat
+  alias less=bat
 fi
 alias ll='ls -lah'
 alias lt='ls -lah --tree'
