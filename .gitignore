@@ -3,3 +3,4 @@
 .config/tmux/plugins
 .config/lazygit/state.yml
 .config/lazygit/state.yml
+.config/btop/btop.log
