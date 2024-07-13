@@ -3,7 +3,7 @@ export LANG="en_US.UTF-8"
 export EDITOR=nvim
 export VISUAL=nvim
 export XDG_CONFIG_HOME=~/.config
-export PATH=$PATH:~/.local/bin:/usr/local/bin:/usr/local/share/dotnet:~/.dotnet/tools:~/.config/tmux/plugins/tmuxifier/bin
+export PATH=$PATH:~/.local/bin:/usr/local/bin:/usr/local/share/dotnet:~/.dotnet/tools:~/.config/tmux/plugins/tmuxifier/bin:~/.cargo/bin
 export TERM=xterm-256color
 
 # Enable homebrew on macOS
