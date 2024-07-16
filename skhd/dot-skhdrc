@@ -70,6 +70,5 @@ alt - b: open -a "Safari"
 alt - v: open -a "Microsoft Edge"
 
 # open terminal
-alt - return: ~/.local/bin/open-kitty.sh
-
+alt - return: /opt/homebrew/bin/kitty -1 -d $HOME
 
