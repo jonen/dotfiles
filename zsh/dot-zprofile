@@ -1,4 +1,4 @@
-# vim: set ft=zsh
+# vim: ft=zsh
 
 if [[ "$(uname -s)" == "Darwin" ]]; then
  eval "$(/opt/homebrew/bin/brew shellenv)"
