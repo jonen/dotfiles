@@ -1,3 +1,5 @@
+# vim: set ft=rc
+
 set editing-mode vi
 
 set show-mode-in-prompt on
