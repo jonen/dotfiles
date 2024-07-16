@@ -52,6 +52,12 @@ return {
 					end,
 					"Edit neovim config",
 				},
+				d = {
+					function()
+						require("telescope.builtin").find_files({ cwd = "~/dotfiles" })
+					end,
+					"Edit dotfiles",
+				},
 			},
 			["<leader>f"] = {
 				name = "+file",
