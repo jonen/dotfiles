@@ -1,0 +1,27 @@
+[user]
+	email = jonathan.gross@uni-leipzig.de
+	name = \"Jonathan Gross\"
+	username = Jonathan
+[core]
+	excludesfile = /Users/jon/.gitignore_global
+  pager = delta
+[init]
+	defaultBranch = master
+[interactive]
+    diffFilter = delta --color-only
+[delta]
+    navigate = true    # use n and N to move between diff sections
+    # delta detects terminal colors automatically; set one of these to disable auto-detection
+    dark = true
+    # light = true
+    side-by-side = true
+    line-numbers = true
+[merge]
+    conflictstyle = diff3
+[diff]
+    colorMoved = default
+[filter "lfs"]
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
