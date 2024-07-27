@@ -2,7 +2,7 @@
 
 add_newline = false
 
-continuation_prompt = " "
+continuation_prompt = "      "
 
 format = """
 [](surface0)\
