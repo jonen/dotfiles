@@ -46,6 +46,7 @@ meh - 9 : yabai -m window --space 9; skhd -k "cmd - 9"
 # open browser
 alt - b: open -a "Safari"
 alt - v: open -a "Microsoft Edge"
+alt - o: open -a "Obsidian"
 
 # open terminal
 alt - return: /opt/homebrew/bin/kitty -1 -d $HOME
