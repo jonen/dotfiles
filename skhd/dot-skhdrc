@@ -27,7 +27,7 @@ alt - t : yabai -m window --toggle float;\
           yabai -m window --grid 4:4:1:1:2:2
 
 # toggle window split type
-alt - e : yabai -m window --toggle split
+# alt - e : yabai -m window --toggle split
 
 # balance size of windows
 shift + alt - 0 : yabai -m space --balance
@@ -47,6 +47,7 @@ meh - 9 : yabai -m window --space 9; skhd -k "cmd - 9"
 alt - b: open -a "Safari"
 alt - v: open -a "Microsoft Edge"
 alt - o: open -a "Obsidian"
+alt - e: open -a "Commander One"
 
 # open terminal
 alt - return: /opt/homebrew/bin/kitty -1 -d $HOME
