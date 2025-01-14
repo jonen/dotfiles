@@ -1,0 +1,8 @@
+theme = catppuccin-mocha
+font-family = "MesloLGM Nerd Font Mono"
+font-size = 15
+window-height = 40
+window-width = 150
+macos-titlebar-style = hidden
+cursor-style = block
+shell-integration-features = no-cursor
