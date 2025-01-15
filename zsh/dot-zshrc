@@ -145,3 +145,9 @@ export POETRY_VIRTUALENVS_PROMPT={project_name}-py{python_version}
 # Rust
 [ -f ~/.cargo/env ] && . "$HOME/.cargo/env"
 
+
+### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
+export PATH="/Users/jon/.rd/bin:$PATH"
+### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
+
+export PATH="$PATH:/Users/jon/.modular/bin"
