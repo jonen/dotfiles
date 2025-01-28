@@ -8,11 +8,6 @@ export XDG_CONFIG_HOME=~/.config
 export PATH=$PATH:~/.local/bin:/usr/local/bin:/usr/local/share/dotnet:~/.dotnet/tools:~/.config/tmux/plugins/tmuxifier/bin:~/.cargo/bin
 export TERM=xterm-256color
 
-# Enable homebrew on macOS
-if [[ -f "/opt/homebrew/bin/brew" ]] then
-  eval "$(/opt/homebrew/bin/brew shellenv)"
-fi
-
 # Set the directory we want to store zinit and plugins
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 
@@ -144,10 +139,5 @@ export POETRY_VIRTUALENVS_PROMPT={project_name}-py{python_version}
 
 # Rust
 [ -f ~/.cargo/env ] && . "$HOME/.cargo/env"
-
-
-### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
-export PATH="/Users/jon/.rd/bin:$PATH"
-### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
 
 export PATH="$PATH:/Users/jon/.modular/bin"

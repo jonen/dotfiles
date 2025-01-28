@@ -1,7 +1,19 @@
 # vim: ft=zsh
 
-if [[ "$(uname -s)" == "Darwin" ]]; then
- eval "$(/opt/homebrew/bin/brew shellenv)"
- source '/opt/homebrew/opt/autoenv/activate.sh'
+arch_type=$(uname -m)
+os_type=$(uname -s)
+
+# Different location for homebrew based on CPU architecture
+# source: https://www.reddit.com/r/MacOS/comments/jw9guu/comment/gcoxkgg
+if [[ "$os_type" == "Darwin" ]]; then
+  if [[ "$arch_type" == "x86_64" ]]; then
+    eval "$(/usr/local/bin/brew shellenv)"
+    source '/usr/local/opt/autoenv/activate.sh'
+  elif [[ "$arch_type" == "arm64" ]]; then
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+    source '/opt/homebrew/opt/autoenv/activate.sh'
+  else
+    echo "Unknown architecture: $arch_type"
+  fi
 fi
 
