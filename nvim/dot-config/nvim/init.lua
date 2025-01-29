@@ -12,4 +12,13 @@ vim.opt.rtp:prepend(lazypath)
 
 require("vim-options")
 require("keybindings")
-require("lazy").setup("plugins")
+require("lazy").setup("plugins",{
+   git = {
+     throttle = {
+       enabled = true, -- not enabled by default
+       -- max 2 ops every 5 seconds
+       rate = 2,
+       duration = 2 * 1000, -- in ms
+     },
+   }
+   })
