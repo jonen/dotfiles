@@ -25,10 +25,10 @@ stow_dotfiles() {
 if [[ "$(uname -s)" == "Darwin" ]]; then
     echo "macOS detected."
     install_homebrew
-    brew install git tmux neovim ripgrep fd uv starship lazygit fzf zoxide eza stow font-meslo-lg-nerd-font bat yazi jq git-delta
+    brew install git tmux neovim ripgrep fd uv starship lazygit fzf zoxide eza stow font-meslo-lg-nerd-font bat yazi jq git-delta node
     git clone https://github.com/tmux-plugins/tpm ~/.config/tmux/plugins/tpm
-    bat cache --build
     stow_dotfiles
+    bat cache --build
 elif [ -f /etc/os-release ]; then
     . /etc/os-release
     # Get distribution and install homebrew prerequisites
@@ -54,10 +54,10 @@ elif [ -f /etc/os-release ]; then
     
     install_homebrew
     test -d /home/linuxbrew/.linuxbrew && eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-    brew install git tmux neovim ripgrep fd uv starship lazygit fzf zoxide eza stow bat yazi jq git-delta rust
+    brew install git tmux neovim ripgrep fd uv starship lazygit fzf zoxide eza stow bat yazi jq git-delta rust node
     git clone https://github.com/tmux-plugins/tpm ~/.config/tmux/plugins/tpm
-    bat cache --build
     stow_dotfiles
+    bat cache --build
 else
     echo "Cannot determine operating system. /etc/os-release not found."
     exit 1
