@@ -23,9 +23,6 @@ autoload -Uz compinit && compinit
 # Source/Load zinit
 source "${ZINIT_HOME}/zinit.zsh"
 
-# Load starship
-eval "$(starship init zsh)"
-
 # Load plugins
 zinit light zsh-users/zsh-syntax-highlighting
 zinit light zsh-users/zsh-completions
@@ -45,12 +42,8 @@ zinit snippet OMZP::cp
 zinit snippet OMZP::colored-man-pages
 
 # Add in completions
-# poetry
-if [ ! -f ~/.zfunc/_poetry ]; then
-  mkdir -p ~/.zfunc
-  poetry completions zsh > ~/.zfunc/_poetry
-fi
 fpath+=~/.zfunc
+fpath+=/home/linuxbrew/.linuxbrew/share/zsh/site-functions
 fpath+=/opt/homebrew/share/zsh/site-functions
 
 zinit cdreplay -q
@@ -142,3 +135,7 @@ export NVM_DIR="$HOME/.config/nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+
+# Load starship
+eval "$(starship init zsh)"
+
