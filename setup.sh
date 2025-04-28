@@ -35,16 +35,16 @@ elif [ -f /etc/os-release ]; then
     case "$ID" in
         debian|ubuntu|linuxmint|pop)
             echo "Debian-based distribution detected: $NAME"
-            sudo apt-get install -y build-essential procps curl file git zsh
+            sudo apt-get install -y build-essential procps curl file git zsh stow
            ;;
         rhel|centos|fedora|rocky|almalinux|oracle)
             echo "RHEL/Fedora-based distribution detected: $NAME"
             sudo dnf groupinstall -y 'Development Tools'
-            sudo dnf install -y procps-ng curl file git zsh
+            sudo dnf install -y procps-ng curl file git zsh stow
            ;;
         arch|manjaro|endeavouros)
             echo "Arch-based distribution detected: $NAME"
-            sudo pacman -S --noconfirm base-devel procps-ng curl file git zsh
+            yay -S --noconfirm base-devel procps-ng curl file git zsh stow tmux neovim ripgrep fd uv starship lazygit fzf zoxide eza stow bat yazi jq git-delta rust node
            ;;
         *)
             echo "Unknown or unsupported distribution: $NAME"
@@ -52,10 +52,6 @@ elif [ -f /etc/os-release ]; then
             ;;
     esac
     
-    install_homebrew
-    test -d /home/linuxbrew/.linuxbrew && eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-    brew install git tmux neovim ripgrep fd uv starship lazygit fzf zoxide eza stow bat yazi jq git-delta rust node
-    git clone https://github.com/tmux-plugins/tpm ~/.config/tmux/plugins/tpm
     stow_dotfiles
     bat cache --build
 else

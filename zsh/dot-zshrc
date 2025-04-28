@@ -34,7 +34,6 @@ zinit light MenkeTechnologies/zsh-cargo-completion
 zinit snippet OMZP::git
 zinit snippet OMZP::sudo
 zinit snippet OMZP::command-not-found
-zinit snippet OMZP::brew
 zinit snippet OMZP::archlinux
 # zinit snippet OMZP::docker
 zinit snippet OMZP::docker-compose
@@ -43,8 +42,6 @@ zinit snippet OMZP::colored-man-pages
 
 # Add in completions
 fpath+=~/.zfunc
-fpath+=/home/linuxbrew/.linuxbrew/share/zsh/site-functions
-fpath+=/opt/homebrew/share/zsh/site-functions
 
 zinit cdreplay -q
 
@@ -111,6 +108,7 @@ alias y=yazi
 [ -f ~/.config/tmux/plugins/tmuxifier/bin/tmuxifier ] && eval "$(tmuxifier init -)"
 alias tmi=tmuxifier
 
+export SSH_AUTH_SOCK=~/.1password/agent.sock
 alias oil='~/.local/bin/oil-ssh.sh'
 
 # Shell integrations
@@ -134,7 +132,6 @@ export NVM_DIR="$HOME/.config/nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 # Load starship
 eval "$(starship init zsh)"
