@@ -7,6 +7,36 @@ install_homebrew() {
     fi
 }
 
+install_yay() {
+    if command -v yay &> /dev/null; then
+        echo "yay is already installed."
+    else
+        echo "yay not found. Installing yay..."
+
+        # Ensure base-devel and git are installed
+        sudo pacman -Sy --noconfirm --needed base-devel git
+
+        # Create a temporary directory for building yay
+        tmpdir=$(mktemp -d)
+        git clone https://aur.archlinux.org/yay.git "$tmpdir/yay"
+        cd "$tmpdir/yay" || exit 1
+
+        # Build and install yay
+        makepkg -si --noconfirm
+
+        # Clean up
+        cd ~
+        rm -rf "$tmpdir"
+
+        if command -v yay &> /dev/null; then
+            echo "yay successfully installed."
+        else
+            echo "Failed to install yay." >&2
+            return 1
+        fi
+    fi
+}
+
 # Function to stow dotfiles
 stow_dotfiles() {
     dotfiles_list=(
@@ -44,6 +74,7 @@ elif [ -f /etc/os-release ]; then
            ;;
         arch|manjaro|endeavouros)
             echo "Arch-based distribution detected: $NAME"
+            install_yay
             yay -S --noconfirm base-devel procps-ng curl file git zsh stow tmux neovim ripgrep fd uv starship lazygit fzf zoxide eza stow bat yazi jq git-delta rust node
            ;;
         *)
