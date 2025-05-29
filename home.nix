@@ -19,19 +19,18 @@
 
   home.packages = with pkgs; [
     ripgrep fd uv zoxide eza jq delta rustc cargo nodejs
-    wezterm kitty alacritty yazi zellij rofi i3 polybar
-    xremap yabai skhd btop ghostty stow
+    kitty yazi zellij btop 
   ];
 
   # Dotfiles
-  home.file.".zshrc".source = ./zsh/.zshrc;
-  home.file.".gitconfig".source = ./git/.gitconfig;
-  home.file.".config/nvim" = { source = ./nvim; recursive = true; };
-  home.file.".config/tmux" = { source = ./tmux; recursive = true; };
-  home.file.".config/alacritty" = { source = ./alacritty; recursive = true; };
-  home.file.".config/kitty" = { source = ./kitty; recursive = true; };
-  home.file.".config/wezterm" = { source = ./wezterm; recursive = true; };
-  home.file.".config/starship.toml".source = ./starship/starship.toml;
+  home.file.".zshrc".source = ./zsh/dot-zshrc;
+  home.file.".inputrc".source = ./zsh/dot-inputrc;
+  home.file.".zprofile".source = ./zsh/dot-zprofile;
+  home.file.".gitconfig".source = ./git/dot-gitconfig;
+  home.file.".config/nvim" = { source = ./nvim/dot-config/nvim; recursive = true; };
+  home.file.".config/tmux" = { source = ./tmux/dot-config/tmux; recursive = true; };
+  home.file.".config/kitty" = { source = ./kitty/dot-config/kitty; recursive = true; };
+  home.file.".config/starship.toml".source = ./starship/dot-config/starship.toml;
 
   # Optional: add the rest as needed (e.g., yabai, skhd, i3, polybar, etc.)
 }
