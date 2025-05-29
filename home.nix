@@ -1,9 +1,16 @@
 { config, pkgs, ... }:
 
+let
+  homeDir = if pkgs.stdenv.isDarwin then
+    "/Users/jon"
+  else
+    "/home/jon";
+
+in
 {
   home.username = "jon";
-  home.homeDirectory = "/home/jon"; # macOS users may change this to /Users/jon
-  home.stateVersion = "23.11"; # or the version you're targeting
+  home.homeDirectory = homeDir;
+  home.stateVersion = "25.05"; # or the version you're targeting
 
   programs.home-manager.enable = true;
 
@@ -19,7 +26,7 @@
 
   home.packages = with pkgs; [
     ripgrep fd uv zoxide eza jq delta rustc cargo nodejs
-    kitty yazi zellij btop 
+    kitty yazi zellij btop gnupg fastfetch
   ];
 
   # Dotfiles
@@ -31,7 +38,5 @@
   home.file.".config/tmux" = { source = ./tmux/dot-config/tmux; recursive = true; };
   home.file.".config/kitty" = { source = ./kitty/dot-config/kitty; recursive = true; };
   home.file.".config/starship.toml".source = ./starship/dot-config/starship.toml;
-
-  # Optional: add the rest as needed (e.g., yabai, skhd, i3, polybar, etc.)
 }
 
