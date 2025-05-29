@@ -105,6 +105,8 @@ alias c=clear
 alias lg=lazygit
 alias y=yazi
 
+alias up='yay --noconfirm && flatpak update -y'
+
 [ -f ~/.config/tmux/plugins/tmuxifier/bin/tmuxifier ] && eval "$(tmuxifier init -)"
 alias tmi=tmuxifier
 
@@ -136,3 +138,5 @@ export NVM_DIR="$HOME/.config/nvm"
 # Load starship
 eval "$(starship init zsh)"
 
+
+if [ -e /home/jon/.nix-profile/etc/profile.d/nix.sh ]; then . /home/jon/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
