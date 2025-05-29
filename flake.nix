@@ -11,16 +11,26 @@
 
   outputs = { self, nixpkgs, home-manager, ... }:
     let
-      system = "x86_64-linux"; # ← Set this explicitly!
-      pkgs = import nixpkgs {
-        inherit system;
-        config.allowUnfree = true;
-      };
+      supportedSystems = [ "x86_64-linux" "aarch64-darwin" ];
+      forEachSystem = f: builtins.listToAttrs (map (system: {
+        name = system;
+        value = f system;
+      }) supportedSystems);
     in {
-      homeConfigurations.jon = home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
-        modules = [ ./home.nix ];
-      };
+      homeConfigurations = forEachSystem (system:
+        let
+          pkgs = import nixpkgs {
+            inherit system;
+            config.allowUnfree = true;
+          };
+        in {
+          jon = home-manager.lib.homeManagerConfiguration {
+            inherit pkgs;
+            modules = [ ./home.nix ];
+            extraSpecialArgs = { inherit system; };
+          };
+        }
+      );
     };
 }
 
