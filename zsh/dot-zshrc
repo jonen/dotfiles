@@ -106,6 +106,7 @@ alias lg=lazygit
 alias y=yazi
 
 alias up='yay --noconfirm && flatpak update -y'
+alias nixup='cd ~/dotfiles && nix flake update && nix run ".#homeConfigurations.x86_64-linux.jon.activationPackage" && cd -'
 
 [ -f ~/.config/tmux/plugins/tmuxifier/bin/tmuxifier ] && eval "$(tmuxifier init -)"
 alias tmi=tmuxifier
