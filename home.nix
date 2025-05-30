@@ -25,11 +25,12 @@ in
   programs.lazygit.enable = true;
 
   home.packages = with pkgs; [
-    ripgrep fd uv zoxide eza jq delta rustc cargo nodejs
-    kitty yazi zellij btop gnupg fastfetch
+    ripgrep fd uv zoxide eza jq delta rustc cargo nodejs glances
+    kitty yazi zellij btop gnupg fastfetch nerd-fonts.meslo-lg
   ];
 
   # Dotfiles
+  home.file.".bashrc".source = ./bash/dot-bashrc;
   home.file.".zshrc".source = ./zsh/dot-zshrc;
   home.file.".inputrc".source = ./zsh/dot-inputrc;
   home.file.".zprofile".source = ./zsh/dot-zprofile;
