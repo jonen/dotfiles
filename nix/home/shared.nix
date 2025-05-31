@@ -4,7 +4,7 @@
 {
   home.packages = with pkgs; [
     ripgrep fd uv zoxide eza jq delta rustc cargo nodejs glances
-    kitty zellij btop gnupg fastfetch nerd-fonts.meslo-lg
+    zellij btop gnupg fastfetch nerd-fonts.meslo-lg
     autoenv yazi
   ];
 

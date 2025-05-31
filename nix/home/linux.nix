@@ -3,6 +3,6 @@
 
 {
   home.packages = with pkgs; [
-    xclip
+    zsh python3
   ];
 }
