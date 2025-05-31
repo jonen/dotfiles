@@ -2,12 +2,13 @@
 { pkgs, ... }:
 
 {
-  home.packages = with pkgs; [
-    mas
-  ];
+  programs.home-manager.enable = true;
 
-  home.activation.installMasApps = ''
-    echo "Installing Mac App Store apps via mas..."
-    mas install 497799835  # Xcode
-  '';
+  homebrew = {
+    enable = true;
+    masApps = {
+      "";
+    }
+    onActivation.cleanup = "zap";
+  }
 }
