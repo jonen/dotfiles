@@ -38,7 +38,7 @@
             value = darwin.lib.darwinSystem {
               inherit system;
               modules = [
-                ./hosts/darwin.nix
+                #./hosts/darwin.nix
                 home-manager.darwinModules.home-manager
                 {
                   home-manager.useGlobalPkgs = true;
@@ -59,7 +59,7 @@
             value = nixpkgs.lib.nixosSystem {
               inherit system;
               modules = [
-                ./hosts/linux.nix
+                #./hosts/linux.nix
                 home-manager.nixosModules.home-manager
                 {
                   home-manager.useGlobalPkgs = true;

@@ -44,7 +44,9 @@ elif [[ "$SYSTEM" == *linux ]]; then
     sudo nixos-rebuild switch --flake ".#jon-${SYSTEM}"
   else
     echo "🎯 Applying Home Manager config for non-NixOS Linux..."
-    nix profile install github:nix-community/home-manager
+    if ! command -v home-manager &> /dev/null; then
+      nix profile install github:nix-community/home-manager
+    fi
     home-manager switch --flake ".#jon-${SYSTEM}" --impure
   fi
 fi
