@@ -26,7 +26,8 @@ in
 
   home.packages = with pkgs; [
     ripgrep fd uv zoxide eza jq delta rustc cargo nodejs glances
-    kitty yazi zellij btop gnupg fastfetch nerd-fonts.meslo-lg
+    kitty zellij btop gnupg fastfetch nerd-fonts.meslo-lg
+    tailscale autoenv yazi
   ];
 
   # Dotfiles
@@ -36,6 +37,8 @@ in
   home.file.".zprofile".source = ./zsh/dot-zprofile;
   home.file.".gitconfig".source = ./git/dot-gitconfig;
   home.file.".config/nvim" = { source = ./nvim/dot-config/nvim; recursive = true; };
+  home.file.".config/bat" = { source = ./bat/dot-config/bat; recursive = true; };
+  home.file.".config/btop" = { source = ./btop/dot-config/btop; recursive = true; };
   home.file.".config/tmux" = { source = ./tmux/dot-config/tmux; recursive = true; };
   home.file.".config/kitty" = { source = ./kitty/dot-config/kitty; recursive = true; };
   home.file.".config/starship.toml".source = ./starship/dot-config/starship.toml;
