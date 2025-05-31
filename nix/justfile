@@ -1,0 +1,40 @@
+# Justfile for managing Nix system and dotfiles
+
+# Set shell to bash with strict mode
+set shell := ["bash", "-cu"]
+
+# Infer the current system (e.g., x86_64-darwin)
+system := `uname -m` + "-" + `uname -s | tr '[:upper:]' '[:lower:]'`
+
+# Determine full Nix platform string
+platform :=
+  if system == "x86_64-darwin" then "jon-x86_64-darwin"
+  elif system == "arm64-darwin" then "jon-aarch64-darwin"
+  elif system == "x86_64-linux" then "jon-x86_64-linux"
+  elif system == "aarch64-linux" then "jon-aarch64-linux"
+  else "unknown"
+
+# Recipe to update only dotfiles via home-manager
+dotfiles:
+  @echo "🔄 Updating dotfiles for {{platform}}..."
+  home-manager switch --flake .#{{platform}} --impure
+
+# Recipe to update system config (Darwin or NixOS)
+system:
+  @echo "🛠 Updating system configuration for {{platform}}..."
+  if [[ "{{system}}" == *darwin ]]; then
+    darwin-rebuild switch --flake .#{{platform}}
+  elif [[ -f /etc/NIXOS ]]; then
+    sudo nixos-rebuild switch --flake .#{{platform}}
+  else
+    echo "⚠️  Not a NixOS or Darwin system."
+  fi
+
+# Optional bootstrap recipe (like setup.sh)
+bootstrap:
+  ./setup.sh
+
+# Show current platform
+info:
+  @echo "Detected platform: {{platform}}"
+
