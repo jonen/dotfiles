@@ -5,7 +5,7 @@
   home.packages = with pkgs; [
     ripgrep fd uv zoxide eza jq delta rustc cargo nodejs glances
     kitty zellij btop gnupg fastfetch nerd-fonts.meslo-lg
-    tailscale autoenv yazi
+    autoenv yazi
   ];
 
   programs.home-manager.enable = true;
@@ -23,11 +23,11 @@
   home.stateVersion = "25.05";
 
   # Dotfiles
-  home.file.".bashrc".source = ../../bash/dot-bashrc;
-  home.file.".zshrc".source = ../../zsh/dot-zshrc;
-  home.file.".inputrc".source = ../../zsh/dot-inputrc;
-  home.file.".zprofile".source = ../../zsh/dot-zprofile;
-  home.file.".gitconfig".source = ../../git/dot-gitconfig;
+  home.file.".bashrc" = { source = ../../bash/dot-bashrc; force = true};
+  home.file.".zshrc" = { source = ../../zsh/dot-zshrc; force = true };
+  home.file.".inputrc" = { source = ../../zsh/dot-inputrc; force = true };
+  home.file.".zprofile" = { source = ../../zsh/dot-zprofile; force = true };
+  home.file.".gitconfig" = { source = ../../git/dot-gitconfig; force = true };
   home.file.".config/nvim" = { source = ../../nvim/dot-config/nvim; recursive = true; };
   home.file.".config/bat" = { source = ../../bat/dot-config/bat; recursive = true; };
   home.file.".config/btop" = { source = ../../btop/dot-config/btop; recursive = true; };

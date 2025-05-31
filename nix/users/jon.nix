@@ -16,6 +16,7 @@ in
 
   home.packages = [
 #    pkgs.home-manager
+    pkgs.python3
   ];
 
   home.file.".zshrc".source = ../../zsh/dot-zshrc;
