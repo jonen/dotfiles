@@ -20,5 +20,10 @@
 
   system.activationScripts.masApps.text = ''
     # Add more app IDs as needed
+    462058435   # Microsoft Excel
+    784801555   # Microsoft OneNote
+    985367838   # Microsoft Outlook
+    462062816   # Microsoft PowerPoint
+    462054704   # Microsoft Word
   '';
 }
