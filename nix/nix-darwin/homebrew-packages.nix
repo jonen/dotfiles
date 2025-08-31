@@ -2,6 +2,7 @@
   enable = true;
   onActivation.autoUpdate = true;
   brews = [
+    "mas"
   ];
   casks = [
     "vlc"
@@ -10,7 +11,6 @@
     "raycast"
     "ghostty"
     "1password-cli"
-    "mas"
   ];
   taps = [
   ];
