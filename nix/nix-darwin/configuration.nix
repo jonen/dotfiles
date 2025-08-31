@@ -1,6 +1,5 @@
 { pkgs, self, ... }:
 {
-
   nix.settings.experimental-features = "nix-command flakes";
 
   # Set Git commit hash for darwin-version.

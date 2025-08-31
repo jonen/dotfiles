@@ -7,13 +7,18 @@
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = inputs@{ self, nix-darwin, nixpkgs }:
-  {
-    darwinConfigurations."jons-Mac-mini" = nix-darwin.lib.darwinSystem {
-      modules = [
-        ./configuration.nix
-      ];
-      specialArgs = { inherit self; };
+  outputs =
+    inputs@{
+      self,
+      nix-darwin,
+      nixpkgs,
+    }:
+    {
+      darwinConfigurations."jons-Mac-mini" = nix-darwin.lib.darwinSystem {
+        modules = [
+          ./configuration.nix
+        ];
+        specialArgs = { inherit self; };
+      };
     };
-  };
 }
