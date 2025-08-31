@@ -12,6 +12,6 @@
   ];
 
   home.file = {
-    ".bashrc".source = /Users/jon/dotfiles/bash/dot-bashrc;
+    ".bashrc".source = ../../../bash/dot-bashrc;
   };
 }
