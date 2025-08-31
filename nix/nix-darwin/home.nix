@@ -12,6 +12,6 @@
   ];
 
   home.file = {
-    ".bashrc".source = ../../../bash/dot-bashrc;
+    ".bashrc".source = config.lib.file.mkOutOfStoreSymlink ../../bash/dot-bashrc;
   };
 }
