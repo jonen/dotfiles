@@ -8,10 +8,7 @@ export XDG_CONFIG_HOME=~/.config
 export PATH=$PATH:~/.local/bin:/usr/local/bin:/usr/local/share/dotnet:~/.dotnet/tools:~/.config/tmux/plugins/tmuxifier/bin:~/.cargo/bin
 export TERM=xterm-256color
 
-# Enable homebrew on macOS
-if [[ -f "/opt/homebrew/bin/brew" ]] then
-  eval "$(/opt/homebrew/bin/brew shellenv)"
-fi
+if [ -e /home/jon/.nix-profile/etc/profile.d/nix.sh ]; then . /home/jon/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
 
 # Set the directory we want to store zinit and plugins
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
@@ -22,11 +19,11 @@ if [ ! -d "$ZINIT_HOME" ]; then
    git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
 fi
 
+# Load completions
+autoload -Uz compinit && compinit
+
 # Source/Load zinit
 source "${ZINIT_HOME}/zinit.zsh"
-
-# Load starship
-eval "$(starship init zsh)"
 
 # Load plugins
 zinit light zsh-users/zsh-syntax-highlighting
@@ -39,7 +36,6 @@ zinit light MenkeTechnologies/zsh-cargo-completion
 zinit snippet OMZP::git
 zinit snippet OMZP::sudo
 zinit snippet OMZP::command-not-found
-zinit snippet OMZP::brew
 zinit snippet OMZP::archlinux
 # zinit snippet OMZP::docker
 zinit snippet OMZP::docker-compose
@@ -47,16 +43,7 @@ zinit snippet OMZP::cp
 zinit snippet OMZP::colored-man-pages
 
 # Add in completions
-# poetry
-if [ ! -f ~/.zfunc/_poetry ]; then
-  mkdir -p ~/.zfunc
-  poetry completions zsh > ~/.zfunc/_poetry
-fi
 fpath+=~/.zfunc
-fpath+=/opt/homebrew/share/zsh/site-functions
-
-# Load completions
-autoload -Uz compinit && compinit
 
 zinit cdreplay -q
 
@@ -120,9 +107,13 @@ alias c=clear
 alias lg=lazygit
 alias y=yazi
 
+alias up='yay --noconfirm && flatpak update -y'
+alias nixup='cd ~/dotfiles && nix flake update && nix run ".#homeConfigurations.x86_64-linux.jon.activationPackage" && cd -'
+
 [ -f ~/.config/tmux/plugins/tmuxifier/bin/tmuxifier ] && eval "$(tmuxifier init -)"
 alias tmi=tmuxifier
 
+export SSH_AUTH_SOCK=~/.1password/agent.sock
 alias oil='~/.local/bin/oil-ssh.sh'
 
 # Shell integrations
@@ -137,17 +128,15 @@ export FZF_DEFAULT_OPTS=" \
 # zoxide
 eval "$(zoxide init --cmd cd zsh)"
 
-# pypoetry
-export PATH="~/.local/share/pypoetry/bin:$PATH"
-export POETRY_VIRTUALENVS_IN_PROJECT=1
-export POETRY_VIRTUALENVS_PROMPT={project_name}-py{python_version}
-
 # Rust
 [ -f ~/.cargo/env ] && . "$HOME/.cargo/env"
 
-
-### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
-export PATH="/Users/jon/.rd/bin:$PATH"
-### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
-
 export PATH="$PATH:/Users/jon/.modular/bin"
+
+export NVM_DIR="$HOME/.config/nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# Load starship
+eval "$(starship init zsh)"
+
