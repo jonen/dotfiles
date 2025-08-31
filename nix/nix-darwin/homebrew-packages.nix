@@ -1,17 +1,21 @@
 {
-    enable = true;
-    onActivation.autoUpdate = true;
-    brews = [
-    ];
-        casks = [
-        "vlc"
-        "witsy"
-        "shortcat"
-        "raycast"
-        "ghostty"
-        "1password-cli"
+  enable = true;
+  onActivation.autoUpdate = true;
+  brews = [
+  ];
+  casks = [
+    "vlc"
+    "witsy"
+    "shortcat"
+    "raycast"
+    "ghostty"
+    "1password-cli"
+    "mas"
+  ];
+  taps = [
+  ];
 
-    ];
-    taps = [
-    ];
+  system.activationScripts.masApps.text = ''
+    # Add more app IDs as needed
+  '';
 }
