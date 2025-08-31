@@ -2,7 +2,6 @@
   enable = true;
   onActivation.autoUpdate = true;
   brews = [
-    "mas"
   ];
   casks = [
     "vlc"

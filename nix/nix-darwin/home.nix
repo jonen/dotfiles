@@ -6,6 +6,7 @@
 
   # Example: your per-user CLI packages
   home.packages = [
+    pkgs.mas
   ];
 
   # Example: Add your mas automation here (as discussed above)
