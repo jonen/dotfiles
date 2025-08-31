@@ -20,13 +20,16 @@ in
     ".config/yazi".source = symlink ../../yazi/dot-config/yazi;
     ".config/nvim".source = symlink ../../nvim/dot-config/nvim;
     ".config/kitty".source = symlink ../../kitty/dot-config/kitty;
+    ".config/ghostty".source = symlink ../../ghostty/dot-config/ghostty;
+    ".config/btop".source = symlink ../../btop/dot-config/btop;
+    ".config/bat".source = symlink ../../bat/dot-config/bat;
     ".config/tmux/tmux.conf".source = symlink ../../tmux/dot-config/tmux/tmux.conf;
     ".inputrc".source = symlink ../../zsh/dot-inputrc;
     ".zprofile".source = symlink ../../zsh/dot-zprofile;
     ".gitconfig".source = symlink ../../git/dot-gitconfig;
     ".gitignore_global".source = symlink ../../git/dot-gitignore_global;
     ".zshrc".source = symlink ../../zsh/dot-zshrc;
-    ".config/starship.toml".source = ../../starship/dot-config/starship.toml;
-    ".local/bin/oil-ssh.sh".source = ../../scripts/dot-local/bin/oil-ssh.sh;
+    ".config/starship.toml".source = symlink ../../starship/dot-config/starship.toml;
+    ".local/bin/oil-ssh.sh".source = symlink ../../scripts/dot-local/bin/oil-ssh.sh;
   };
 }
