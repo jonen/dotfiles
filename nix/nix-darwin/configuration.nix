@@ -18,11 +18,4 @@
   # Install the following packages
   environment.systemPackages = import ./nix-packages.nix pkgs;
   homebrew = import ./homebrew-packages.nix;
-
-  system.activationScripts.listSystemPackages.text = ''
-    echo "systemPackages to be installed:"
-    echo "${
-      toString (map (p: p.pname or (builtins.parseDrvName p.name).name) config.environment.systemPackages)
-    }"
-  '';
 }
