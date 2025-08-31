@@ -8,7 +8,7 @@
   ];
   # Example: your per-user CLI packages
   home.packages = [
-    mas
+    pkgs.mas
   ];
 
   # Example: Add your mas automation here (as discussed above)
