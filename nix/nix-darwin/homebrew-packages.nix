@@ -10,7 +10,9 @@
     "shortcat"
     "raycast"
     "ghostty"
+    "1password"
     "1password-cli"
+    "readest"
   ];
   taps = [
   ];
