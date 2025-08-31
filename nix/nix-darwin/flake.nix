@@ -25,8 +25,6 @@
           home-manager.darwinModules.home-manager
           {
             home-manager.users.jon = import ./home.nix;
-            # Backup existing files
-            home-manager.backupFileExtension = "backup";
           }
         ];
         specialArgs = { inherit self; };
