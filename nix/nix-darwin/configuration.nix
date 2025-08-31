@@ -18,4 +18,8 @@
   # Install the following packages
   environment.systemPackages = import ./nix-packages.nix pkgs;
   homebrew = import ./homebrew-packages.nix;
+
+  system.activationScripts.masApps.text = ''
+    # Add more app IDs as needed
+  '';
 }

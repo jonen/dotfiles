@@ -14,8 +14,4 @@
   ];
   taps = [
   ];
-
-  system.activationScripts.masApps.text = ''
-    # Add more app IDs as needed
-  '';
 }
