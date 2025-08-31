@@ -14,6 +14,12 @@
   nixpkgs.hostPlatform = "aarch64-darwin";
   nixpkgs.config.allowUnfree = true;
 
+  # Necessary for home manager
+  users.users.jon = {
+    home = "/Users/jon";
+    shell = pkgs.zsh;
+  };
+
   # Install the following packages
   environment.systemPackages = import ./nix-packages.nix pkgs;
   homebrew = import ./homebrew-packages.nix;
