@@ -31,4 +31,5 @@ pkgs: with pkgs; [
   yt-dlp
   zoxide
   nerd-fonts.meslo-lg
+  delta
 ]

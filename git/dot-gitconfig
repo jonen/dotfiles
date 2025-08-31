@@ -1,12 +1,13 @@
 [user]
-	email = jonathan.gross@uni-leipzig.de
-	name = \"Jonathan Gross\"
-	username = Jonathan
+    email = jonathan.gross@uni-leipzig.de
+    name = Jonathan Gross
 [core]
-	excludesfile = /Users/jon/.gitignore_global
-  pager = delta
+    excludesfile = /Users/jon/.gitignore_global
+    pager = delta
+    user = Jonathan Gross
+    email = jongr@me.com
 [init]
-	defaultBranch = master
+    defaultBranch = main
 [interactive]
     diffFilter = delta --color-only
 [delta]
@@ -17,11 +18,11 @@
     side-by-side = true
     line-numbers = true
 [merge]
-    conflictstyle = diff3
+    conflictstyle = zdiff3
 [diff]
     colorMoved = default
 [filter "lfs"]
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
-	clean = git-lfs clean -- %f
+    smudge = git-lfs smudge -- %f
+    process = git-lfs filter-process
+    required = true
+    clean = git-lfs clean -- %f
