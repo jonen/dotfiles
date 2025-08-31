@@ -13,7 +13,6 @@
 
   home.file = {
     ".bashrc".source = config.lib.file.mkOutOfStoreSymlink ../../bash/dot-bashrc;
-    ".config/lazygit/config.yml".source =
-      config.lib.file.mkOutOfStoreSymlink ../../lazygit/dot-config/config.yml;
+    ".config/lazygit".source = config.lib.file.mkOutOfStoreSymlink ../../lazygit/dot-config/lazygit;
   };
 }
