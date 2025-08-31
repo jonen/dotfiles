@@ -14,6 +14,8 @@
       self,
       nix-darwin,
       nixpkgs,
+      home-manager,
+      ...
     }:
     {
       darwinConfigurations."jons-Mac-mini" = nix-darwin.lib.darwinSystem {
