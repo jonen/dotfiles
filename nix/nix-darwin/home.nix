@@ -10,4 +10,10 @@
   home.packages = [
     pkgs.mas
   ];
+
+  home.file = {
+    ".bashrc" = {
+      source = config.lib.file.mkOutOfStoreSymlink ../../../bash/dot-bashrc;
+    };
+  }
 }
