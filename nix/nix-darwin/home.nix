@@ -3,9 +3,12 @@
 {
   # Make sure Home Manager matches system state version
   home.stateVersion = "25.11"; # or latest you see on home-manager
-
+  home.sessionPath = [
+    "/opt/homebrew/bin"
+  ];
   # Example: your per-user CLI packages
   home.packages = [
+    mas
   ];
 
   # Example: Add your mas automation here (as discussed above)
