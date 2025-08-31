@@ -11,6 +11,7 @@
     pkgs.mas
   ];
 
+  home-manager.backupFileExtension = "backup";
   home.file = {
     ".bashrc".source = config.lib.file.mkOutOfStoreSymlink ../../../bash/dot-bashrc;
   };
