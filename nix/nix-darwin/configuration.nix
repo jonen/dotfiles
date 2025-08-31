@@ -16,5 +16,5 @@
 
     # Install the following packages
     environment.systemPackages = import ./nix-packages.nix pkgs;
-    homebrew = import ./homebrew-packages.nix;
+    # homebrew = import ./homebrew-packages.nix;
 }
