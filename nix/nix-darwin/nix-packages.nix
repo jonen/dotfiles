@@ -2,7 +2,6 @@ pkgs: with pkgs; [
         neovim
         kitty
         obsidian
-        # vlc not available for apple silicon, need to use homebrew for that one
         vscode
         raycast
         bat

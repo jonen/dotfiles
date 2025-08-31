@@ -2,8 +2,6 @@
     enable = true;
     onActivation.autoUpdate = true;
     brews = [
-        "wget"
-        "htop"
     ];
         casks = [
         "vlc"
@@ -15,6 +13,5 @@
 
     ];
     taps = [
-        # e.g., "homebrew/cask-fonts"
     ];
 }
