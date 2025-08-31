@@ -82,6 +82,7 @@ if [ -x "$eza_installed" ] ; then
 fi
 bat_installed=$(which bat)
 if [ -x "$bat_installed" ] ; then
+  export LESSUTFCHARDEF=E000-F8FF:p,F0000-FFFFD:p,100000-10FFFD:p
   alias cat=bat
   alias less=bat
 fi
