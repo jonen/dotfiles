@@ -34,6 +34,7 @@ zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-autosuggestions
 zinit light Aloxaf/fzf-tab
 zinit light MenkeTechnologies/zsh-cargo-completion
+zinit light sunlei/zsh-ssh
 
 # Add in snippets
 zinit snippet OMZP::git
@@ -47,11 +48,6 @@ zinit snippet OMZP::cp
 zinit snippet OMZP::colored-man-pages
 
 # Add in completions
-# poetry
-if [ ! -f ~/.zfunc/_poetry ]; then
-  mkdir -p ~/.zfunc
-  poetry completions zsh > ~/.zfunc/_poetry
-fi
 fpath+=~/.zfunc
 fpath+=/opt/homebrew/share/zsh/site-functions
 
@@ -89,9 +85,11 @@ zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 
 # Aliases
 alias ls='ls --color'
+alias lst='ls -alrt'
 eza_installed=$(which eza)
 if [ -x "$eza_installed" ] ; then
-  alias ls="eza --git --icons=always"
+  alias ls="eza --git --icons=always --group"
+  alias lst='ls -alr --sort old'
 fi
 bat_installed=$(which bat)
 if [ -x "$bat_installed" ] ; then
@@ -137,17 +135,19 @@ export FZF_DEFAULT_OPTS=" \
 # zoxide
 eval "$(zoxide init --cmd cd zsh)"
 
-# pypoetry
-export PATH="~/.local/share/pypoetry/bin:$PATH"
-export POETRY_VIRTUALENVS_IN_PROJECT=1
-export POETRY_VIRTUALENVS_PROMPT={project_name}-py{python_version}
+# uv
+eval "$(uv generate-shell-completion zsh)"
+eval "$(uvx --generate-shell-completion zsh)"
 
 # Rust
 [ -f ~/.cargo/env ] && . "$HOME/.cargo/env"
+RUSTC_WRAPPER=sccache
 
+export PATH="$PATH:/Users/jon/.modular/bin"
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/jon/.cache/lm-studio/bin"
 
 ### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
 export PATH="/Users/jon/.rd/bin:$PATH"
 ### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
-
-export PATH="$PATH:/Users/jon/.modular/bin"
+source <(kubectl completion zsh)
