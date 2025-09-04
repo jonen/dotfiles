@@ -5,7 +5,19 @@ return {
 		vim.o.timeout = true
 		vim.o.timeoutlen = 200
 	end,
-	opts = {},
+	opts = {
+		preset = "helix",
+	},
+	-- keys = {
+	-- 	{ "<leader>b", desc = "buffer" },
+	-- 	{ "<leader>bb", "<CMD>Telescope buffers<CR>", desc = "Show buffer list" },
+	-- 	{ "<leader>bc", ":bd<CR>", desc = "Close current buffer" },
+	-- 	{ "<leader>bd", ":bd<CR>", desc = "Close current buffer" },
+	-- 	{ "<leader>bi", "gg=G``", desc = "Indent current buffer" }, -- indent and keep current cursor position
+	-- 	{ "<leader>bo", "<CMD>BufferCloseAllButCurrent<CR>|'\"", desc = "Close all other buffers" },
+	-- 	{ "<leader>bn", "<CMD>bn<CR>", desc = "Next buffer" },
+	-- 	{ "<leader>bp", "<CMD>bp<CR>", desc = "Previous buffer" },
+	-- },
 	config = function()
 		require("which-key").register({
 			["<leader>b"] = {
