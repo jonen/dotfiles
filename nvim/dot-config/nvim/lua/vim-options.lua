@@ -4,6 +4,7 @@ vim.opt.tabstop = 2
 vim.opt.softtabstop = 2
 vim.opt.shiftwidth = 2
 vim.opt.cursorline = true
+vim.opt.mouse = ""
 vim.g.mapleader = " "
 vim.opt.hlsearch = true
 vim.opt.termguicolors = true

@@ -1,0 +1,35 @@
+pkgs: with pkgs; [
+  neovim
+  kitty
+  obsidian
+  vscode
+  raycast
+  bat
+  btop
+  eza
+  fastfetch
+  fd
+  fzf
+  git
+  gnupg
+  htop
+  lazygit
+  mediainfo
+  nixfmt-rfc-style
+  nodejs_24
+  podman
+  python313
+  ripgrep
+  speedtest-cli
+  starship
+  stow
+  tailscale
+  tmux
+  ueberzugpp
+  uv
+  yazi
+  yt-dlp
+  zoxide
+  nerd-fonts.meslo-lg
+  delta
+]

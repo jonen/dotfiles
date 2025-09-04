@@ -106,9 +106,9 @@ export LANG="en_US.UTF-8"
 
 # Aliases
 
-lsd_installed=$(which lsd)
-if [ -x "$lsd_installed" ] ; then
-  alias ls=lsd
+eza_installed=$(which eza)
+if [ -x "$eza_installed" ] ; then
+  alias ls=eza
 fi
 alias ll='ls -lah'
 alias l='ls -lh'
@@ -162,7 +162,5 @@ export POETRY_VIRTUALENVS_PROMPT={project_name}-py{python_version}
 eval "$(starship init bash)"
 [ -f "$HOME/.cargo/env" ] && . "$HOME/.cargo/env"
 
+if [ -e /home/jon/.nix-profile/etc/profile.d/nix.sh ]; then . /home/jon/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
 
-### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
-export PATH="/Users/jon/.rd/bin:$PATH"
-### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
