@@ -24,9 +24,9 @@
     ".zprofile".source = ../../zsh/dot-zprofile;
     ".gitconfig".source = ../../git/dot-gitconfig;
     ".gitignore_global".source = ../../git/dot-gitignore_global;
-    ".zshrc".source = config.lib.file.mkOutOfStoreSymlink ../../zsh/dot-zshrc;
+    ".zshrc".source = config.lib.file.mkOutOfStoreSymlink ./zsh/dot-zshrc;
     ".config/starship.toml".source =
-      config.lib.file.mkOutOfStoreSymlink ../../starship/dot-config/starship.toml;
+      config.lib.file.mkOutOfStoreSymlink ./starship/dot-config/starship.toml;
     ".local/bin/oil-ssh.sh".source = ../../scripts/dot-local/bin/oil-ssh.sh;
   };
 }
