@@ -85,6 +85,7 @@ CentOS = ""
 Debian = "󰣚"
 Redhat = "󱄛"
 RedHatEnterprise = "󱄛"
+Unknown = ""
 
 [username]
 show_always = true
