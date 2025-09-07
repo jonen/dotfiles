@@ -31,9 +31,12 @@
     shell = pkgs.zsh;
   };
 
+
   # Install the following packages
   # Nix packages
   environment.systemPackages = import ./nix-packages.nix pkgs;
   # Homebrew and Mac App Store
   homebrew = import ./homebrew-packages.nix;
+  # Install fonts
+  fonts.packages = import ./fonts-packages.nix pkgs;
 }

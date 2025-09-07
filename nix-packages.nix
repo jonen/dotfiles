@@ -29,7 +29,6 @@ pkgs: with pkgs; [
   yazi
   yt-dlp
   zoxide
-  nerd-fonts.meslo-lg
   delta
   tailscale
 ]

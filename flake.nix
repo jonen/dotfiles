@@ -30,7 +30,7 @@
         ];
         specialArgs = { inherit self; };
       };
-      darwinConfigurations."jons-intel-macbook" = nix-darwin.lib.darwinSystem {
+      darwinConfigurations."Jons-Intel-MacBook" = nix-darwin.lib.darwinSystem {
         modules = [
           ./configuration-intel.nix
           # Home Manager
