@@ -9,9 +9,11 @@ This repository contains configuration files and setup scripts for various appli
 - **Homebrew** (for macOS)
 - **Nix** (for package management)
 
-## Installation
+## Nix-based installation
 
-To set up your environment, run the following command:
+(macOS-only at this moment)
+
+To set up the environment, run the following command:
 
 ```sh
 bash nix-setup.sh
@@ -19,13 +21,20 @@ bash nix-setup.sh
 
 This script will:
 
-1. Detect your hostname and set up the Nix flake accordingly.
+1. Detect the hostname and set up the Nix flake accordingly.
 2. Install Nix if it is not already installed.
 3. Install Homebrew if it is not already installed.
 4. Install `nix-darwin` for macOS users.
 5. Build the `bat` cache.
 
-After running `nix-setup.sh`, you can run:
+## Native package managers
+
+- **macOS**: The script installs necessary packages using Homebrew.
+- **Linux**: The script detects the distribution and installs the required packages using the appropriate package manager (APT for Debian-based, DNF for RHEL-based, and Yay for Arch-based).
+
+Works best and tested with Arch-based distros.
+
+To set up the environment, run the following command:
 
 ```sh
 bash setup.sh
@@ -33,18 +42,13 @@ bash setup.sh
 
 This script will:
 
-1. Install Homebrew if it is not already installed (for non-macOS users).
+1. Install Homebrew if it is not already installed.
 2. Install `yay` for Arch-based distributions if it is not already installed.
 3. Stow dotfiles for various applications and tools based on the detected operating system.
 
-## Supported Operating Systems
-
-- **macOS**: The script installs necessary packages using Homebrew.
-- **Linux**: The script detects the distribution and installs the required packages using the appropriate package manager (APT for Debian-based, DNF for RHEL-based, and Yay for Arch-based).
-
 ## Dotfiles Included
 
-The following dotfiles are included in this repository:
+The dotfiles for the following program are included in this repository:
 
 - `aerospace`
 - `alacritty`
