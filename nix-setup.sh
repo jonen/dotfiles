@@ -31,5 +31,7 @@ if ! command -v darwin-rebuild >/dev/null 2>&1; then
   sudo NIX_CONFIG="experimental-features = nix-command flakes" nix run github:LnL7/nix-darwin -- switch --flake .
 fi
 
+bat cache --build
+
 echo "✅ Setup complete for host: $HOSTNAME"
 echo "🔁 Please restart your terminal session."
