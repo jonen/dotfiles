@@ -28,11 +28,11 @@
             home-manager.backupFileExtension = "backup";
           }
         ];
-        specialArgs = { inherit self; };
+        specialArgs = { inherit self; hostPlatform = "aarch64-darwin";};
       };
       darwinConfigurations."Jons-Intel-MacBook" = nix-darwin.lib.darwinSystem {
         modules = [
-          ./configuration-intel.nix
+          ./configuration.nix
           # Home Manager
           home-manager.darwinModules.home-manager
           {
@@ -40,7 +40,7 @@
             home-manager.backupFileExtension = "backup";
           }
         ];
-        specialArgs = { inherit self; };
+        specialArgs = { inherit self; hostPlatform = "x86_64-darwin";};
       };
     };
 }

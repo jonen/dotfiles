@@ -1,5 +1,6 @@
-{ pkgs, self, ... }:
+{ pkgs, self, hostPlatform, ... }:
 {
+
   # Auto upgrade nix package and the daemon service.
   nix = {
     package = pkgs.nix;
@@ -22,7 +23,7 @@
   system.stateVersion = 6;
 
   # The platform the configuration will be used on.
-  nixpkgs.hostPlatform = "aarch64-darwin";
+  nixpkgs.hostPlatform = hostPlatform;
   nixpkgs.config.allowUnfree = true;
 
   # Necessary for home manager
