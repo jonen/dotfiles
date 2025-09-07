@@ -31,4 +31,5 @@ pkgs: with pkgs; [
   zoxide
   nerd-fonts.meslo-lg
   delta
+  tailscale
 ]

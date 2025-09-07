@@ -30,5 +30,17 @@
         ];
         specialArgs = { inherit self; };
       };
+      darwinConfigurations."jons-intel-macbook" = nix-darwin.lib.darwinSystem {
+        modules = [
+          ./configuration-intel.nix
+          # Home Manager
+          home-manager.darwinModules.home-manager
+          {
+            home-manager.users.jon = import ./home.nix;
+            home-manager.backupFileExtension = "backup";
+          }
+        ];
+        specialArgs = { inherit self; };
+      };
     };
 }

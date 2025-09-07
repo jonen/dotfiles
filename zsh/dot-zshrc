@@ -149,11 +149,6 @@ export PATH="$PATH:/Users/jon/.modular/bin"
 # Added by LM Studio CLI (lms)
 export PATH="$PATH:/Users/jon/.cache/lm-studio/bin"
 
-### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
-export PATH="/Users/jon/.rd/bin:$PATH"
-### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
-source <(kubectl completion zsh)
-
 export PATH="$PATH:/Users/jon/.modular/bin"
 
 export NVM_DIR="$HOME/.config/nvm"
