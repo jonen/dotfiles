@@ -13,6 +13,7 @@
     "1password-cli"
     "readest"
     "tailscale-app"
+    "brave-browser"
   ];
   taps = [
   ];
