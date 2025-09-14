@@ -2,6 +2,7 @@
   enable = true;
   onActivation.autoUpdate = true;
   brews = [
+    "mas"
   ];
   casks = [
     "vlc"
@@ -14,6 +15,8 @@
     "readest"
     "tailscale-app"
     "brave-browser"
+    "obsidian"
+    "visual-studio-code"
   ];
   taps = [
   ];
@@ -23,6 +26,6 @@
 #    Outlook = 985367838;
 #    PowerPoint = 462062816;
 #    Word = 462054704;
-#    Infuse = 1136220934;
+    Infuse = 1136220934;
   };
 }

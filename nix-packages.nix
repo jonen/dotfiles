@@ -1,9 +1,5 @@
 pkgs: with pkgs; [
   neovim
-  kitty
-  obsidian
-  vscode
-  raycast
   bat
   btop
   eza
@@ -30,5 +26,4 @@ pkgs: with pkgs; [
   yt-dlp
   zoxide
   delta
-  tailscale
 ]
