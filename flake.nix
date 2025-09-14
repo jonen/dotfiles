@@ -22,18 +22,26 @@
         modules = [
           ./configuration.nix
         ];
-        specialArgs = { inherit self; hostPlatform = "aarch64-darwin";};
+        specialArgs = {
+          inherit self;
+          hostPlatform = "aarch64-darwin";
+        };
       };
       darwinConfigurations."Jons-Intel-MacBook" = nix-darwin.lib.darwinSystem {
         modules = [
           ./configuration.nix
-       ];
-        specialArgs = { inherit self; hostPlatform = "x86_64-darwin";};
+        ];
+        specialArgs = {
+          inherit self;
+          hostPlatform = "x86_64-darwin";
+        };
       };
       homeConfigurations."arm-jon" = home-manager.lib.homeManagerConfiguration {
         pkgs = import nixpkgs { system = "aarch64-darwin"; };
         extraSpecialArgs = { inherit inputs; };
-        configuration = import ./home.nix;
+        modules = [
+          ./home.nix
+        ];
       };
       homeConfigurations."intel-jon" = home-manager.lib.homeManagerConfiguration {
         pkgs = import nixpkgs { system = "x86_64-darwin"; };
