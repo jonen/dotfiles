@@ -1,14 +1,22 @@
 { config, pkgs, ... }:
+let
+  dotfiles = "/Users/jon/dotfiles";
+  create_symlink = path: config.lib.file.mkOutOfStoreSymlink path;
+in
 {
   # Make sure Home Manager matches system state version
-  home.stateVersion = "25.11"; # or latest you see on home-manager
+    home = {
+      username = "jon";
+      homeDirectory = "/Users/jon"; 
+      stateVersion = "25.05";
+    };
+
   # Example: your per-user CLI packages
   home.packages = [
-    pkgs.mas
+    pkgs.home-manager
   ];
 
   home.file = {
-    ".bashrc".source = ./bash/dot-bashrc;
     ".config/lazygit".source = ./lazygit/dot-config/lazygit;
     ".config/yazi".source = ./yazi/dot-config/yazi;
     ".config/nvim".source = ./nvim/dot-config/nvim;
@@ -16,13 +24,14 @@
     ".config/ghostty".source = ./ghostty/dot-config/ghostty;
     ".config/btop".source = ./btop/dot-config/btop;
     ".config/bat".source = ./bat/dot-config/bat;
-    ".config/tmux/tmux.conf".source = ./tmux/dot-config/tmux/tmux.conf;
-    ".inputrc".source = ./zsh/dot-inputrc;
-    ".zprofile".source = ./zsh/dot-zprofile;
-    ".gitconfig".source = ./git/dot-gitconfig;
-    ".gitignore_global".source = ./git/dot-gitignore_global;
-    ".zshrc".source = ./zsh/dot-zshrc;
-    ".config/starship.toml".source = ./starship/dot-config/starship.toml;
-    ".local/bin/oil-ssh.sh".source = ./scripts/dot-local/bin/oil-ssh.sh;
+    ".bashrc".source = create_symlink "${dotfiles}/bash/dot-bashrc";
+    ".config/tmux/tmux.conf".source = create_symlink "${dotfiles}/tmux/dot-config/tmux/tmux.conf";
+    ".inputrc".source = create_symlink "${dotfiles}/zsh/dot-inputrc";
+    ".zprofile".source = create_symlink "${dotfiles}/zsh/dot-zprofile";
+    ".gitconfig".source = create_symlink "${dotfiles}/git/dot-gitconfig";
+    ".gitignore_global".source = create_symlink "${dotfiles}/git/dot-gitignore_global";
+    ".zshrc".source = create_symlink "${dotfiles}/zsh/dot-zshrc";
+    ".config/starship.toml".source = create_symlink "${dotfiles}/starship/dot-config/starship.toml";
+    ".local/bin/oil-ssh.sh".source = create_symlink "${dotfiles}/scripts/dot-local/bin/oil-ssh.sh";
   };
 }

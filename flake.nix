@@ -2,10 +2,10 @@
   description = "Jons Mac Flake";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
-    nix-darwin.url = "github:nix-darwin/nix-darwin/master";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
+    nix-darwin.url = "github:nix-darwin/nix-darwin/nix-darwin-25.05";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
-    home-manager.url = "github:nix-community/home-manager";
+    home-manager.url = "github:nix-community/home-manager/release-25.05";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };
 
@@ -21,26 +21,26 @@
       darwinConfigurations."jons-Mac-mini" = nix-darwin.lib.darwinSystem {
         modules = [
           ./configuration.nix
-          # Home Manager
-          home-manager.darwinModules.home-manager
-          {
-            home-manager.users.jon = import ./home.nix;
-            home-manager.backupFileExtension = "backup";
-          }
         ];
         specialArgs = { inherit self; hostPlatform = "aarch64-darwin";};
       };
       darwinConfigurations."Jons-Intel-MacBook" = nix-darwin.lib.darwinSystem {
         modules = [
           ./configuration.nix
-          # Home Manager
-          home-manager.darwinModules.home-manager
-          {
-            home-manager.users.jon = import ./home.nix;
-            home-manager.backupFileExtension = "backup";
-          }
-        ];
+       ];
         specialArgs = { inherit self; hostPlatform = "x86_64-darwin";};
+      };
+      homeConfigurations."arm-jon" = home-manager.lib.homeManagerConfiguration {
+        pkgs = import nixpkgs { system = "aarch64-darwin"; };
+        extraSpecialArgs = { inherit inputs; };
+        configuration = import ./home.nix;
+      };
+      homeConfigurations."intel-jon" = home-manager.lib.homeManagerConfiguration {
+        pkgs = import nixpkgs { system = "x86_64-darwin"; };
+        extraSpecialArgs = { inherit inputs; };
+        modules = [
+          ./home.nix
+        ];
       };
     };
 }
