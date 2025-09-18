@@ -8,7 +8,7 @@ function info {
 
 function prompt_platform {
   echo "Which platform are you setting up?"
-  select opt in "Intel (Jons-Intel-MacBook / intel-jon)" "ARM (jons-Mac-mini / arm-jon)"; do
+  select opt in "Intel (Jons-Intel-MacBook)" "ARM (jons-Mac-mini)" "ARM (Jons-Work-Macbook)"; do
     case $REPLY in
       1)
         DARWIN_CONFIG="Jons-Intel-MacBook"
@@ -20,8 +20,13 @@ function prompt_platform {
         HOME_CONFIG="arm-jon"
         break
         ;;
+      3)
+        DARWIN_CONFIG="Jons-Work-Macbook"
+        HOME_CONFIG="arm-jon"
+        break
+        ;;
       *)
-        echo "Please choose 1 or 2."
+        echo "Please choose."
         ;;
     esac
   done
@@ -31,7 +36,7 @@ function prompt_platform {
 info "Checking for Nix..."
 if ! command -v nix >/dev/null 2>&1; then
   info "Installing Nix using Determinate Systems installer..."
-  curl -L https://install.determinate.systems/nix | sh
+  curl -L https://install.determinate.systems/nix | sh -s -- install
   info "Nix installed. You may need to restart your terminal or run '. /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'"
 else
   info "Nix is already installed."
@@ -64,7 +69,7 @@ info "Nix Darwin system configuration for $DARWIN_CONFIG applied via flake."
 
 # 7. Apply the Home Manager configuration for the selected platform
 info "Applying your Home Manager flake for $HOME_CONFIG (user configuration)..."
-nix --extra-experimental-features nix-command --extra-experimental-features flakes run home-manager/release-25.05 -- switch --flake .#intel-jon
+nix --extra-experimental-features nix-command --extra-experimental-features flakes run home-manager/release-25.05 -- switch --flake .#"$HOME_CONFIG"
 
 info "Home Manager configuration for $HOME_CONFIG applied via flake."
 
