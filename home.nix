@@ -1,6 +1,7 @@
 { config, pkgs, ... }:
 let
   dotfiles = "/Users/jon/dotfiles";
+
   create_symlink = path: config.lib.file.mkOutOfStoreSymlink path;
 in
 {
@@ -21,7 +22,10 @@ in
     ".config/yazi".source = ./yazi/dot-config/yazi;
     ".config/nvim".source = ./nvim/dot-config/nvim;
     ".config/kitty".source = ./kitty/dot-config/kitty;
-    ".config/ghostty".source = ./ghostty/dot-config/ghostty;
+    ".config/ghostty" = {
+        source = create_symlink "${dotfiles}/ghostty/dot-config/ghostty";
+        recursive = true;
+    };
     ".config/btop".source = ./btop/dot-config/btop;
     ".config/bat".source = ./bat/dot-config/bat;
     ".bashrc".source = create_symlink "${dotfiles}/bash/dot-bashrc";
