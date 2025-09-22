@@ -1,16 +1,15 @@
 { config, pkgs, ... }:
 let
   dotfiles = "/Users/jon/dotfiles";
-
   create_symlink = path: config.lib.file.mkOutOfStoreSymlink path;
 in
 {
   # Make sure Home Manager matches system state version
-    home = {
-      username = "jon";
-      homeDirectory = "/Users/jon"; 
-      stateVersion = "25.05";
-    };
+  home = {
+    username = "jon";
+    homeDirectory = "/Users/jon"; 
+    stateVersion = "25.05";
+  };
 
   # Example: your per-user CLI packages
   home.packages = [
@@ -29,7 +28,9 @@ in
     ".config/btop".source = ./btop/dot-config/btop;
     ".config/bat".source = ./bat/dot-config/bat;
     ".bashrc".source = create_symlink "${dotfiles}/bash/dot-bashrc";
-    ".config/tmux/tmux.conf".source = create_symlink "${dotfiles}/tmux/dot-config/tmux/tmux.conf";
+    ".config/tmux/tmux.conf"= {
+        source = create_symlink "${dotfiles}/tmux/dot-config/tmux/tmux.conf";
+    };
     ".inputrc".source = create_symlink "${dotfiles}/zsh/dot-inputrc";
     ".zprofile".source = create_symlink "${dotfiles}/zsh/dot-zprofile";
     ".gitconfig".source = create_symlink "${dotfiles}/git/dot-gitconfig";
