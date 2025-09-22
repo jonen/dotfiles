@@ -32,6 +32,7 @@ zinit light zsh-users/zsh-autosuggestions
 zinit light Aloxaf/fzf-tab
 zinit light MenkeTechnologies/zsh-cargo-completion
 zinit light sunlei/zsh-ssh
+zinit light chisui/zsh-nix-shell
 
 # Add in snippets
 zinit snippet OMZP::git
