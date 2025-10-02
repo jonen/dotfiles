@@ -19,6 +19,7 @@
     "brave-browser"
     "obsidian"
     "visual-studio-code"
+    "xquartz"
   ];
   taps = [
   ];
