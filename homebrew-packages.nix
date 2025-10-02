@@ -9,7 +9,7 @@
   casks = [
     "vlc"
     "witsy"
-    "shortcat"
+    "homerow"
     "raycast"
     "ghostty"
     "1password"
