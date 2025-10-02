@@ -1,6 +1,8 @@
 {
   enable = true;
   onActivation.autoUpdate = true;
+  onActivation.upgrade = true;
+  onActivation.cleanup = "zap";
   brews = [
     "mas"
   ];
