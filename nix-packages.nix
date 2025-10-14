@@ -26,4 +26,5 @@ pkgs: with pkgs; [
   yt-dlp
   zoxide
   delta
+  nushell
 ]
