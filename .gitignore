@@ -3,3 +3,4 @@ nvim/dot-config/nvim/lazy-lock.json
 lazygit/dot-config/lazygit/state.yml
 btop/dot-config/btop/btop.log
 *.bak
+flake.lock
