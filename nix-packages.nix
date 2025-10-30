@@ -24,7 +24,10 @@ pkgs: with pkgs; [
   uv
   yazi
   yt-dlp
+  ffmpeg
   zoxide
   delta
   nushell
+  podman
+  podman-compose
 ]

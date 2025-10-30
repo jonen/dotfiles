@@ -13,6 +13,6 @@ theme = Catppuccin Mocha
 bold-is-bright= true
 cursor-invert-fg-bg = true
 cursor-style-blink = true
-font-size = 15
+font-size = 13
 font-family = "MesloLGM Nerd Font Mono"
 macos-titlebar-style = hidden
