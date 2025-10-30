@@ -18,15 +18,6 @@
       ...
     }:
     {
-      darwinConfigurations."jons-Mac-mini" = nix-darwin.lib.darwinSystem {
-        modules = [
-          ./configuration.nix
-        ];
-        specialArgs = {
-          inherit self;
-          hostPlatform = "aarch64-darwin";
-        };
-      };
       darwinConfigurations."Jons-Work-MacBook" = nix-darwin.lib.darwinSystem {
         modules = [
           ./configuration.nix
@@ -45,24 +36,8 @@
           hostPlatform = "aarch64-darwin";
         };
       };
-      darwinConfigurations."Jons-Intel-MacBook" = nix-darwin.lib.darwinSystem {
-        modules = [
-          ./configuration.nix
-        ];
-        specialArgs = {
-          inherit self;
-          hostPlatform = "x86_64-darwin";
-        };
-      };
-      homeConfigurations."arm-jon" = home-manager.lib.homeManagerConfiguration {
+      homeConfigurations."jon" = home-manager.lib.homeManagerConfiguration {
         pkgs = import nixpkgs { system = "aarch64-darwin"; };
-        extraSpecialArgs = { inherit inputs; };
-        modules = [
-          ./home.nix
-        ];
-      };
-      homeConfigurations."intel-jon" = home-manager.lib.homeManagerConfiguration {
-        pkgs = import nixpkgs { system = "x86_64-darwin"; };
         extraSpecialArgs = { inherit inputs; };
         modules = [
           ./home.nix
