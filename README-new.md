@@ -3,17 +3,16 @@
 ## Nix + nix-darwin + Home Manager Setup
 
 This repository contains my macOS configuration managed with Nix flakes, nix-darwin, and Home Manager.
-It bootstraps a new Mac (Intel or Apple Silicon), installs system and user packages, fonts, apps via Homebrew and the Mac App Store, and links my dotfiles.
+It bootstraps Apple Silicon Macs, installs system and user packages, fonts, apps via Homebrew and the Mac App Store, and links my dotfiles.
 
 ## Overview
 
 - Flake targets:
     - darwinConfigurations:
-        - jons-Mac-mini (Apple Silicon, aarch64-darwin)
-        - Jons-Intel-MacBook (Intel, x86_64-darwin)
+        - Jons-MacBook-Pro (Apple Silicon, aarch64-darwin)
+        - Jons-Work-MacBook (Apple Silicon, aarch64-darwin)
     - homeConfigurations:
         - arm-jon (Apple Silicon)
-        - intel-jon (Intel)
 - System layer (nix-darwin):
     - Nix settings (flakes enabled, GC, optimise)
     - Primary user: jon with zsh
@@ -40,8 +39,8 @@ It bootstraps a new Mac (Intel or Apple Silicon), installs system and user packa
     - chmod +x ./setup-mac.sh
     - ./setup-mac.sh
     - Choose your platform when prompted:
-        - 1 = Intel (Jons-Intel-MacBook / intel-jon)
-        - 2 = ARM (jons-Mac-mini / arm-jon)
+        - 2 = ARM (Jons-MacBook-Pro / arm-jon)
+        - 3 = ARM (Jons-Work-Macbook / arm-jon)
     - What it does:
         - Installs Nix via Determinate Systems installer if missing
         - Restarts nix-daemon
@@ -58,8 +57,9 @@ It bootstraps a new Mac (Intel or Apple Silicon), installs system and user packa
         - home-manager: release-25.05
     - Exposes:
         - darwinConfigurations."jons-Mac-mini" (aarch64-darwin)
-        - darwinConfigurations."Jons-Intel-MacBook" (x86_64-darwin)
-        - homeConfigurations."arm-jon" and "intel-jon"
+        - darwinConfigurations."Jons-MacBook-Pro" (aarch64-darwin)
+        - darwinConfigurations."Jons-Work-MacBook" (aarch64-darwin)
+        - homeConfigurations."arm-jon"
 - configuration.nix (nix-darwin)
     - Enables nix-command and flakes
     - Automatic GC and optimisation
@@ -103,15 +103,10 @@ It bootstraps a new Mac (Intel or Apple Silicon), installs system and user packa
 ## Common Commands
 
 - Switch system configuration manually:
-    - Apple Silicon:
-        - sudo nix --extra-experimental-features 'nix-command flakes' run github:nix-darwin/nix-darwin -- switch --flake .#jons-Mac-mini
-    - Intel:
-        - sudo nix --extra-experimental-features 'nix-command flakes' run github:nix-darwin/nix-darwin -- switch --flake .#Jons-Intel-MacBook
+    - sudo nix --extra-experimental-features 'nix-command flakes' run github:nix-darwin/nix-darwin -- switch --flake .#jons-Mac-mini
+    - Swap the host suffix for `Jons-MacBook-Pro` or `Jons-Work-MacBook` when targeting those machines.
 - Switch Home Manager profile:
-    - Apple Silicon:
-        - nix --extra-experimental-features 'nix-command flakes' run home-manager/release-25.05 -- switch --flake .#arm-jon
-    - Intel:
-        - nix --extra-experimental-features 'nix-command flakes' run home-manager/release-25.05 -- switch --flake .#intel-jon
+    - nix --extra-experimental-features 'nix-command flakes' run home-manager/release-25.05 -- switch --flake .#arm-jon
 - Garbage collect and optimise:
     - sudo nix store optimise
     - sudo nix-collect-garbage -d
