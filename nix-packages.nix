@@ -30,4 +30,5 @@ pkgs: with pkgs; [
   nushell
   podman
   podman-compose
+  codex
 ]
