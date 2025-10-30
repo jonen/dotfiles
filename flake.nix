@@ -2,11 +2,11 @@
   description = "Jons Mac Flake";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
-    nix-darwin.url = "github:nix-darwin/nix-darwin/nix-darwin-25.05";
-    nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
-    home-manager.url = "github:nix-community/home-manager/release-25.05";
-    home-manager.inputs.nixpkgs.follows = "nixpkgs";
+      nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+      nix-darwin.url = "github:LnL7/nix-darwin"; # main branch tracks unstable nixpkgs well
+      nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
+      home-manager.url = "github:nix-community/home-manager"; # default branch = master (unstable)
+      home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs =
