@@ -8,7 +8,7 @@ function info {
 
 function prompt_platform {
   echo "Which platform are you setting up?"
-  select opt in "Intel (Jons-Intel-MacBook)" "ARM (jons-Mac-mini)" "ARM (Jons-Work-Macbook)"; do
+  select opt in "Intel (Jons-Intel-MacBook)" "ARM (jons-Mac-mini)" "ARM (Jons-Macbook-Pro)" "ARM (Jons-Work-Macbook)"; do
     case $REPLY in
       1)
         DARWIN_CONFIG="Jons-Intel-MacBook"
@@ -21,6 +21,11 @@ function prompt_platform {
         break
         ;;
       3)
+        DARWIN_CONFIG="Jons-MacBook-Pro"
+        HOME_CONFIG="arm-jon"
+        break
+        ;;
+      4)
         DARWIN_CONFIG="Jons-Work-Macbook"
         HOME_CONFIG="arm-jon"
         break

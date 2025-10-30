@@ -36,6 +36,15 @@
           hostPlatform = "aarch64-darwin";
         };
       };
+      darwinConfigurations."Jons-MacBook-Pro" = nix-darwin.lib.darwinSystem {
+        modules = [
+          ./configuration.nix
+        ];
+        specialArgs = {
+          inherit self;
+          hostPlatform = "aarch64-darwin";
+        };
+      };
       darwinConfigurations."Jons-Intel-MacBook" = nix-darwin.lib.darwinSystem {
         modules = [
           ./configuration.nix
