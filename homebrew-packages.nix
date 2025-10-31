@@ -19,7 +19,6 @@
     "tailscale-app"
     "visual-studio-code"
     "vlc"
-    "witsy"
     "xquartz"
   ];
   taps = [
