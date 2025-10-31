@@ -18,6 +18,7 @@ pkgs: with pkgs; [
   nixfmt-rfc-style
   nodejs_24
   nushell
+  ollama
   podman
   podman-compose
   python313
