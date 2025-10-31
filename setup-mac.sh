@@ -64,7 +64,7 @@ info "Nix Darwin system configuration for $DARWIN_CONFIG applied via flake."
 
 # 7. Apply the Home Manager configuration for the selected platform
 info "Applying your Home Manager flake for $HOME_CONFIG (user configuration)..."
-nix --extra-experimental-features nix-command --extra-experimental-features flakes run home-manager/release-25.05 -- switch --flake .#"$HOME_CONFIG"
+nix --extra-experimental-features nix-command --extra-experimental-features flakes run home-manager -- switch --flake .#"$HOME_CONFIG"
 
 info "Home Manager configuration for $HOME_CONFIG applied via flake."
 

@@ -12,7 +12,7 @@ It bootstraps Apple Silicon Macs, installs system and user packages, fonts, apps
         - Jons-MacBook-Pro (Apple Silicon, aarch64-darwin)
         - Jons-Work-MacBook (Apple Silicon, aarch64-darwin)
     - homeConfigurations:
-        - arm-jon (Apple Silicon)
+        - jon (Apple Silicon)
 - System layer (nix-darwin):
     - Nix settings (flakes enabled, GC, optimise)
     - Primary user: jon with zsh
@@ -20,7 +20,7 @@ It bootstraps Apple Silicon Macs, installs system and user packages, fonts, apps
     - Homebrew casks + MAS apps from homebrew-packages.nix
     - Fonts via fonts-packages.nix
 - User layer (Home Manager):
-    - Home state version: 25.05
+    - Home state version: 24.05
     - Dotfiles and app configs linked into $HOME
     - Adds home-manager to PATH
 
@@ -39,8 +39,8 @@ It bootstraps Apple Silicon Macs, installs system and user packages, fonts, apps
     - chmod +x ./setup-mac.sh
     - ./setup-mac.sh
     - Choose your platform when prompted:
-        - 2 = ARM (Jons-MacBook-Pro / arm-jon)
-        - 3 = ARM (Jons-Work-Macbook / arm-jon)
+        - 2 = ARM (Jons-MacBook-Pro / jon)
+        - 3 = ARM (Jons-Work-Macbook / jon)
     - What it does:
         - Installs Nix via Determinate Systems installer if missing
         - Restarts nix-daemon
@@ -52,14 +52,13 @@ It bootstraps Apple Silicon Macs, installs system and user packages, fonts, apps
 
 - flake.nix
     - Pins:
-        - nixpkgs: nixos-25.05
-        - nix-darwin: nix-darwin-25.05
-        - home-manager: release-25.05
+        - nixpkgs: nixpkgs-unstable
+        - nix-darwin: main branch (unstable)
+        - home-manager: master branch (unstable)
     - Exposes:
-        - darwinConfigurations."jons-Mac-mini" (aarch64-darwin)
         - darwinConfigurations."Jons-MacBook-Pro" (aarch64-darwin)
         - darwinConfigurations."Jons-Work-MacBook" (aarch64-darwin)
-        - homeConfigurations."arm-jon"
+        - homeConfigurations."jon"
 - configuration.nix (nix-darwin)
     - Enables nix-command and flakes
     - Automatic GC and optimisation
@@ -70,7 +69,7 @@ It bootstraps Apple Silicon Macs, installs system and user packages, fonts, apps
         - homebrew from homebrew-packages.nix
         - fonts.packages from fonts-packages.nix
 - home.nix (Home Manager)
-    - home.username = "jon", homeDirectory = "/Users/jon", stateVersion = "25.05"
+    - home.username = "jon", homeDirectory = "/Users/jon", stateVersion = "24.05"
     - Installs pkgs.home-manager
     - Manages dotfiles and app configs:
         - ./lazygit/dot-config/lazygit -> ~/.config/lazygit
@@ -103,10 +102,10 @@ It bootstraps Apple Silicon Macs, installs system and user packages, fonts, apps
 ## Common Commands
 
 - Switch system configuration manually:
-    - sudo nix --extra-experimental-features 'nix-command flakes' run github:nix-darwin/nix-darwin -- switch --flake .#jons-Mac-mini
+    - sudo nix --extra-experimental-features 'nix-command flakes' run github:nix-darwin/nix-darwin -- switch --flake .
     - Swap the host suffix for `Jons-MacBook-Pro` or `Jons-Work-MacBook` when targeting those machines.
 - Switch Home Manager profile:
-    - nix --extra-experimental-features 'nix-command flakes' run home-manager/release-25.05 -- switch --flake .#arm-jon
+    - home-manager switch --flake .#jon
 - Garbage collect and optimise:
     - sudo nix store optimise
     - sudo nix-collect-garbage -d

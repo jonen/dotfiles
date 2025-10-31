@@ -8,7 +8,7 @@ in
   home = {
     username = "jon";
     homeDirectory = "/Users/jon"; 
-    stateVersion = "25.05";
+    stateVersion = "24.05";
   };
 
   # Example: your per-user CLI packages
