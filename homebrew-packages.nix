@@ -7,18 +7,19 @@
     "mas"
   ];
   casks = [
-    "vlc"
-    "witsy"
-    "homerow"
-    "raycast"
-    "ghostty"
     "1password"
     "1password-cli"
+    "brave-browser"
+    "discord"
+    "ghostty"
+    "homerow"
+    "obsidian"
+    "raycast"
     "readest"
     "tailscale-app"
-    "brave-browser"
-    "obsidian"
     "visual-studio-code"
+    "vlc"
+    "witsy"
     "xquartz"
   ];
   taps = [
