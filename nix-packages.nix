@@ -1,18 +1,25 @@
 pkgs: with pkgs; [
-  neovim
   bat
   btop
+  codex
+  delta
   eza
   fastfetch
+  ffmpeg
   fd
   fzf
+  gemini-cli
   git
   gnupg
   htop
   lazygit
   mediainfo
+  neovim
   nixfmt-rfc-style
   nodejs_24
+  nushell
+  podman
+  podman-compose
   python313
   ripgrep
   speedtest-cli
@@ -24,11 +31,5 @@ pkgs: with pkgs; [
   uv
   yazi
   yt-dlp
-  ffmpeg
   zoxide
-  delta
-  nushell
-  podman
-  podman-compose
-  codex
 ]
