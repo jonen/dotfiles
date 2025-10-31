@@ -72,33 +72,11 @@ An alternative script-based setup for Linux and macOS is also available.
 - home.nix (Home Manager)
     - home.username = "jon", homeDirectory = "/Users/jon", stateVersion = "24.05"
     - Installs pkgs.home-manager
-    - Manages dotfiles and app configs:
-        - ./lazygit/dot-config/lazygit -> ~/.config/lazygit
-        - ./yazi/dot-config/yazi -> ~/.config/yazi
-        - ./nvim/dot-config/nvim -> ~/.config/nvim
-        - ./kitty/dot-config/kitty -> ~/.config/kitty
-        - ./btop/dot-config/btop -> ~/.config/btop
-        - ./bat/dot-config/bat -> ~/.config/bat
-        - Out-of-store symlinks into external dotfiles repo at /Users/jon/dotfiles:
-            - ~/.bashrc -> bash/dot-bashrc
-            - ~/.config/tmux/tmux.conf -> tmux/dot-config/tmux/tmux.conf
-            - ~/.inputrc -> zsh/dot-inputrc
-            - ~/.zprofile -> zsh/dot-zprofile
-            - ~/.gitconfig -> git/dot-gitconfig
-            - ~/.gitignore_global -> git/dot-gitignore_global
-            - ./ghostty/dot-config/ghostty -> ~/.config/ghostty
-            - ~/.zshrc -> zsh/dot-zshrc
-            - ~/.config/starship.toml -> starship/dot-config/starship.toml
-            - ~/.local/bin/oil-ssh.sh -> scripts/dot-local/bin/oil-ssh.sh
+    - Manages dotfiles and app configs
     - Note: Requires your dotfiles repo at /Users/jon/dotfiles. Update the path or place your repo there.
 - nix-packages.nix
-    - CLI tools: neovim, bat, btop, eza, fastfetch, fd, fzf, git, gnupg, htop, lazygit, mediainfo, nixfmt-rfc-style, nodejs_24, python313, ripgrep, speedtest-cli, starship, stow, tailscale, tmux, ueberzugpp, uv, yazi, yt-dlp, zoxide, delta
 - homebrew-packages.nix
-    - brews: mas
-    - casks: vlc, witsy, shortcat, raycast, ghostty, 1password, 1password-cli, readest, tailscale-app, brave-browser, obsidian, visual-studio-code
-    - MAS apps: Infuse, 1Password for Safari, Consent-O-Matic, Obsidian Web Clipper, SponsorBlock, uBlock Origin Lite
 - fonts-packages.nix
-    - nerd-fonts.meslo-lg
 
 ## Common Commands
 
