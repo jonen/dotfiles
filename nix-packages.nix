@@ -12,15 +12,19 @@ pkgs: with pkgs; [
   git
   gnupg
   htop
+  kubectl
   lazygit
   mediainfo
+  minikube
   neovim
   nixfmt-rfc-style
   nodejs_24
   nushell
   ollama
+  opencode
   podman
   podman-compose
+  podman-tui
   python313
   ripgrep
   speedtest-cli
