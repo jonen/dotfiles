@@ -14,6 +14,7 @@
     "ghostty"
     "homerow"
     "obsidian"
+    "plexamp"
     "raycast"
     "readest"
     "tailscale-app"
