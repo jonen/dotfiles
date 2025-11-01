@@ -18,6 +18,11 @@
   system.configurationRevision = self.rev or self.dirtyRev or null;
   system.primaryUser = "jon";
 
+  system.keyboard.enableKeyMapping = true;
+  system.keyboard.remapCapsLockToControl = true;
+  # Disable press and hold for diacritics. I want to be able to press and hold j and k in VSCode with vim keys to move around.
+  system.defaults.NSGlobalDomain.ApplePressAndHoldEnabled = false;
+
   # Used for backwards compatibility, please read the changelog before changing.
   # $ darwin-rebuild changelog
   system.stateVersion = 6;
