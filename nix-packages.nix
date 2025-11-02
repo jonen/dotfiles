@@ -2,7 +2,6 @@ pkgs: with pkgs; [
   bat
   btop
   cargo
-  codex
   delta
   eza
   fastfetch
@@ -27,6 +26,7 @@ pkgs: with pkgs; [
   podman-compose
   podman-tui
   python313
+  python313Packages.pip
   ripgrep
   speedtest-cli
   starship
@@ -35,6 +35,7 @@ pkgs: with pkgs; [
   tmux
   ueberzugpp
   uv
+  wget
   yazi
   yt-dlp
   zoxide

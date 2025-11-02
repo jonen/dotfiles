@@ -10,6 +10,7 @@
     "1password"
     "1password-cli"
     "brave-browser"
+    "codex"
     "discord"
     "ghostty"
     "homerow"
