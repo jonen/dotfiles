@@ -23,6 +23,26 @@ return {
   dependencies = {
     -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
     "MunifTanjim/nui.nvim",
+    {
+      "nvim-treesitter/nvim-treesitter",
+      opts = function(_, opts)
+        opts = opts or {}
+        local ensure = opts.ensure_installed or {}
+        if ensure == "all" or ensure == "maintained" then
+          return
+        end
+
+        if type(ensure) == "table" then
+          for _, parser in ipairs({ "bash", "regex" }) do
+            if not vim.tbl_contains(ensure, parser) then
+              table.insert(ensure, parser)
+            end
+          end
+        end
+
+        opts.ensure_installed = ensure
+      end,
+    },
     -- OPTIONAL:
     --   `nvim-notify` is only needed, if you want to use the notification view.
     --   If not available, we use `mini` as the fallback
