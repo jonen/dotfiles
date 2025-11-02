@@ -19,7 +19,11 @@ in
   home.file = {
     ".config/lazygit".source = ./lazygit/dot-config/lazygit;
     ".config/yazi".source = ./yazi/dot-config/yazi;
-    ".config/nvim".source = ./nvim/dot-config/nvim;
+    ".config/nvim" = {
+      source = create_symlink "${dotfiles}/nvim/dot-config/nvim";
+      recursive = true;
+
+    };
     ".config/kitty".source = ./kitty/dot-config/kitty;
     ".config/ghostty" = {
         source = create_symlink "${dotfiles}/ghostty/dot-config/ghostty";
