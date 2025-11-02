@@ -5,6 +5,7 @@
   onActivation.cleanup = "zap";
   brews = [
     "mas"
+    "opencode"
   ];
   casks = [
     "1password"

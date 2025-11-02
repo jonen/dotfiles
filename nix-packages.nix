@@ -21,7 +21,6 @@ pkgs: with pkgs; [
   nodejs_24
   nushell
   ollama
-  opencode
   podman
   podman-compose
   podman-tui
