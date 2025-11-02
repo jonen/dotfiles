@@ -43,38 +43,40 @@ return {
 		lazy = false,
 		config = function()
 			local capabilities = require("cmp_nvim_lsp").default_capabilities()
+			local util = require("lspconfig.util")
 
-			local lspconfig = require("lspconfig")
-			lspconfig.lua_ls.setup({
-				capabilities = capabilities,
-			})
-			lspconfig.pyright.setup({
-				capabilities = capabilities,
-				filetypes = { "python" },
-				settings = {
-					plugins = {
-						ruff = { enabled = true },
-					},
-				},
-			})
-			lspconfig.clangd.setup({
-				capabilities = capabilities,
-			})
-			lspconfig.rust_analyzer.setup({
-				capabilities = capabilities,
-				filetypes = { "rust" },
-				root_dir = lspconfig.util.root_pattern("Cargo.toml"),
-				settings = {
-					["rust-analyzer"] = {
-						cargo = {
-							allFeatures = true,
-						},
-						checkOnSave = {
-							command = "clippy",
+			local server_configs = {
+				lua_ls = {},
+				pyright = {
+					filetypes = { "python" },
+					settings = {
+						plugins = {
+							ruff = { enabled = true },
 						},
 					},
 				},
-			})
+				clangd = {},
+				rust_analyzer = {
+					filetypes = { "rust" },
+					root_dir = util.root_pattern("Cargo.toml"),
+					settings = {
+						["rust-analyzer"] = {
+							cargo = {
+								allFeatures = true,
+							},
+							checkOnSave = {
+								command = "clippy",
+							},
+						},
+					},
+				},
+			}
+
+			for server, config in pairs(server_configs) do
+				config.capabilities = capabilities
+				vim.lsp.config(server, config)
+				vim.lsp.enable(server)
+			end
 		end,
 	},
 }
