@@ -12,8 +12,8 @@ in
   };
 
   # Example: your per-user CLI packages
-  home.packages = [
-    pkgs.home-manager
+  home.packages = with pkgs; [
+    home-manager
   ];
 
   home.file = {
