@@ -8,32 +8,21 @@ pkgs: with pkgs; [
   ffmpeg
   fd
   fzf
-  gemini-cli
   git
   gnupg
   htop
-  kubectl
   lazygit
   mediainfo
-  minikube
   neovim
   nixfmt-rfc-style
   nodejs_24
   nushell
-  ollama
-  podman
-  podman-compose
-  podman-tui
-  python313
-  python313Packages.pip
   ripgrep
   speedtest-cli
   starship
   stow
-  tailscale
   tmux
   ueberzugpp
-  uv
   wget
   yazi
   yt-dlp

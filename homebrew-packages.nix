@@ -4,8 +4,19 @@
   onActivation.upgrade = true;
   onActivation.cleanup = "zap";
   brews = [
+    "gemini-cli"
+    "kubectl"
+    "libavif"
     "mas"
+    "minikube"
     "opencode"
+    "pkgconf"
+    "podman"
+    "podman-compose"
+    "podman-tui"
+    "python@3.11"
+    "tailscale"
+    "uv"
   ];
   casks = [
     "1password"
@@ -16,6 +27,7 @@
     "ghostty"
     "homerow"
     "obsidian"
+    "ollama-app"
     "plexamp"
     "raycast"
     "readest"
