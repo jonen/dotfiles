@@ -17,20 +17,35 @@ in
   ];
 
   home.file = {
-    ".config/lazygit".source = ./lazygit/dot-config/lazygit;
-    ".config/yazi".source = ./yazi/dot-config/yazi;
+    ".config/lazygit" = {
+        source = create_symlink "${dotfiles}/lazygit/dot-config/lazygit";
+        recursive = true;
+    };
+    ".config/yazi" = {
+        source = create_symlink "${dotfiles}/yazi/dot-config/yazi";
+        recursive = true;
+    };
     ".config/nvim" = {
       source = create_symlink "${dotfiles}/nvim/dot-config/nvim";
       recursive = true;
 
     };
-    ".config/kitty".source = ./kitty/dot-config/kitty;
+    ".config/kitty" = {
+        source = create_symlink "${dotfiles}/kitty/dot-config/kitty";
+        recursive = true;
+    };
     ".config/ghostty" = {
         source = create_symlink "${dotfiles}/ghostty/dot-config/ghostty";
         recursive = true;
     };
-    ".config/btop".source = ./btop/dot-config/btop;
-    ".config/bat".source = ./bat/dot-config/bat;
+    ".config/btop" = {
+        source = create_symlink "${dotfiles}/btop/dot-config/btop";
+        recursive = true;
+    };
+    ".config/bat" = {
+        source = create_symlink "${dotfiles}/bat/dot-config/bat";
+        recursive = true;
+    };
     ".bashrc".source = create_symlink "${dotfiles}/bash/dot-bashrc";
     ".config/tmux/tmux.conf"= {
         source = create_symlink "${dotfiles}/tmux/dot-config/tmux/tmux.conf";
