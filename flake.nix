@@ -21,13 +21,13 @@
       darwinConfigurations."Jons-Work-MacBook" = nix-darwin.lib.darwinSystem {
         specialArgs = { inherit inputs self; };
         modules = [
-          ./configuration.nix
+          ./work-configuration.nix
         ];
       };
       darwinConfigurations."Jons-MacBook-Pro" = nix-darwin.lib.darwinSystem {
         specialArgs = { inherit inputs self; };
         modules = [
-          ./configuration.nix
+          ./personal-configuration.nix
         ];
       };
       homeConfigurations."jon" = home-manager.lib.homeManagerConfiguration {
