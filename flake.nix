@@ -19,22 +19,16 @@
     }:
     {
       darwinConfigurations."Jons-Work-MacBook" = nix-darwin.lib.darwinSystem {
+        specialArgs = { inherit inputs self; };
         modules = [
           ./configuration.nix
         ];
-        specialArgs = {
-          inherit self;
-          hostPlatform = "aarch64-darwin";
-        };
       };
       darwinConfigurations."Jons-MacBook-Pro" = nix-darwin.lib.darwinSystem {
+        specialArgs = { inherit inputs self; };
         modules = [
           ./configuration.nix
         ];
-        specialArgs = {
-          inherit self;
-          hostPlatform = "aarch64-darwin";
-        };
       };
       homeConfigurations."jon" = home-manager.lib.homeManagerConfiguration {
         pkgs = import nixpkgs { system = "aarch64-darwin"; };
