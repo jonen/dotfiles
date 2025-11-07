@@ -5,5 +5,5 @@
   ];
 
   # Homebrew and Mac App Store - Work profile (excludes personal packages)
-  homebrew = import ./homebrew.nix;
+  homebrew = import ./brew-work.nix;
 }

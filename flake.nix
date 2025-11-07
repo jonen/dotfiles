@@ -21,20 +21,20 @@
       darwinConfigurations."Jons-Work-MacBook" = nix-darwin.lib.darwinSystem {
         specialArgs = { inherit inputs self; };
         modules = [
-          ./nix/work/darwin-configuration.nix
+          ./nix/work-configuration.nix
         ];
       };
       darwinConfigurations."Jons-MacBook-Pro" = nix-darwin.lib.darwinSystem {
         specialArgs = { inherit inputs self; };
         modules = [
-          ./nix/personal/darwin-configuration.nix
+          ./nix/personal-configuration.nix
         ];
       };
       homeConfigurations."jon" = home-manager.lib.homeManagerConfiguration {
         pkgs = import nixpkgs { system = "aarch64-darwin"; };
         extraSpecialArgs = { inherit inputs; };
         modules = [
-          ./nix/personal/home.nix
+          ./nix/home.nix
         ];
       };
     };
