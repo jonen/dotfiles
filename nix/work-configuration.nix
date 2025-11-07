@@ -4,6 +4,6 @@
     ./configuration.nix
   ];
 
-  # Homebrew and Mac App Store - Work profile (excludes personal packages)
+  # Homebrew and Mac App Store - Work profile
   homebrew = import ./brew-work.nix;
 }
