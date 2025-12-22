@@ -117,14 +117,19 @@ alias c=clear
 alias lg=lazygit
 alias y=yazi
 
-alias up='yay --noconfirm && flatpak update -y'
-alias nixup='cd ~/dotfiles && nix flake update && sudo darwin-rebuild switch --flake . && nix-collect-garbage && cd -'
-
 [ -f ~/.config/tmux/plugins/tmuxifier/bin/tmuxifier ] && eval "$(tmuxifier init -)"
 alias tmi=tmuxifier
 
 export SSH_AUTH_SOCK=~/.1password/agent.sock
 alias oil='~/.local/bin/oil-ssh.sh'
+
+# chezmoi stuff
+alias bbu="brew bundle --file=~/.Brewfile --cleanup --verbose"
+alias cma="chezmoi apply"
+alias cmebf="chezmoi edit ~/.Brewfile"
+alias cmcd="chezmoi cd"
+alias cme="chezmoi edit"
+alias cmu="chezmoi update"
 
 # Shell integrations
 # fzf
