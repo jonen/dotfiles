@@ -1,0 +1,5 @@
+# .chezmoi.toml - Placed in the root of the chezmoi source directory
+# This file provides data to templates.
+
+[data]
+machine = "personal" # Can be "personal" or "work"

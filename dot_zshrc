@@ -1,0 +1,164 @@
+# vim: ft=zsh
+
+export LC_ALL="en_US.UTF-8"
+export LANG="en_US.UTF-8"
+export EDITOR=nvim
+export VISUAL=nvim
+export XDG_CONFIG_HOME=~/.config
+export PATH=$PATH:~/.local/bin:/usr/local/bin:/usr/local/share/dotnet:~/.dotnet/tools:~/.config/tmux/plugins/tmuxifier/bin:~/.cargo/bin
+export TERM=xterm-256color
+
+if [ -e /home/jon/.nix-profile/etc/profile.d/nix.sh ]; then . /home/jon/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
+
+# Set the directory we want to store zinit and plugins
+ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
+
+# Download zinit, if not installed already
+if [ ! -d "$ZINIT_HOME" ]; then
+   mkdir -p "$(dirname $ZINIT_HOME)"
+   git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
+fi
+
+# Load completions
+autoload -Uz compinit && compinit
+
+# Source/Load zinit
+source "${ZINIT_HOME}/zinit.zsh"
+
+# Load plugins
+zinit light zsh-users/zsh-syntax-highlighting
+zinit light zsh-users/zsh-completions
+zinit light zsh-users/zsh-autosuggestions
+zinit light Aloxaf/fzf-tab
+zinit light MenkeTechnologies/zsh-cargo-completion
+zinit light sunlei/zsh-ssh
+zinit light chisui/zsh-nix-shell
+
+# Add in snippets
+zinit snippet OMZP::git
+zinit snippet OMZP::sudo
+zinit snippet OMZP::command-not-found
+zinit snippet OMZP::archlinux
+# zinit snippet OMZP::docker
+zinit snippet OMZP::docker-compose
+zinit snippet OMZP::cp
+zinit snippet OMZP::colored-man-pages
+
+# Add in completions
+# poetry
+if [ ! -f ~/.zfunc/_poetry ]; then
+  mkdir -p ~/.zfunc
+  poetry completions zsh > ~/.zfunc/_poetry
+fi
+fpath+=~/.zfunc
+
+zinit cdreplay -q
+
+# Keybindings
+bindkey -v
+bindkey '^y' autosuggest-accept
+# enable command line editing in visual mode
+autoload edit-command-line; zle -N edit-command-line
+bindkey -M vicmd v edit-command-line
+
+# History
+HISTSIZE=5000
+HISTFILE=~/.zsh_history
+SAVEHIST=$HISTSIZE
+HISTDUP=erase
+setopt appendhistory
+setopt sharehistory
+setopt hist_ignore_space
+setopt hist_ignore_all_dups
+setopt hist_save_no_dups
+setopt hist_ignore_dups
+setopt hist_find_no_dups
+
+# Completion styling
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
+zstyle ':completion:*' menu no
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
+zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
+
+# Aliases
+alias ls='ls --color'
+alias lst='ls -alrt'
+eza_installed=$(which eza)
+if [ -x "$eza_installed" ] ; then
+  alias ls="eza --git --icons=always --group"
+  alias lst='ls -alr --sort old'
+fi
+bat_installed=$(which bat)
+if [ -x "$bat_installed" ] ; then
+  export LESSUTFCHARDEF=E000-F8FF:p,F0000-FFFFD:p,100000-10FFFD:p
+  alias cat=bat
+  alias less=bat
+fi
+alias ll='ls -lah'
+alias lt='ls -lah --tree'
+alias l='ls -lh'
+alias lsa='ls -lah'
+alias la='ls -lA'
+
+alias ..='cd ..'
+alias ...='cd ../..'
+
+alias scpresume="rsync --partial --progress --rsh=ssh --human-readable"
+alias rcopy="rsync --partial --progress --append --rsh=ssh --recursive --human-readable"
+alias rmove="rsync --partial --progress --append --rsh=ssh --recursive --human-readable --remove-source-files"
+
+alias vim=nvim
+alias v=nvim
+
+alias sudoedit="sudo -e"
+
+alias c=clear
+alias lg=lazygit
+alias y=yazi
+
+alias up='yay --noconfirm && flatpak update -y'
+alias nixup='cd ~/dotfiles && nix flake update && sudo darwin-rebuild switch --flake . && nix-collect-garbage && cd -'
+
+[ -f ~/.config/tmux/plugins/tmuxifier/bin/tmuxifier ] && eval "$(tmuxifier init -)"
+alias tmi=tmuxifier
+
+export SSH_AUTH_SOCK=~/.1password/agent.sock
+alias oil='~/.local/bin/oil-ssh.sh'
+
+# Shell integrations
+# fzf
+eval "$(fzf --zsh)"
+# catppuccin for fzf
+export FZF_DEFAULT_OPTS=" \
+--color=bg+:#313244,bg:#1e1e2e,spinner:#f5e0dc,hl:#f38ba8 \
+--color=fg:#cdd6f4,header:#f38ba8,info:#cba6f7,pointer:#f5e0dc \
+--color=marker:#f5e0dc,fg+:#cdd6f4,prompt:#cba6f7,hl+:#f38ba8"
+
+# zoxide
+eval "$(zoxide init --cmd cd zsh)"
+
+# uv
+eval "$(uv generate-shell-completion zsh)"
+eval "$(uvx --generate-shell-completion zsh)"
+
+# Rust
+[ -f ~/.cargo/env ] && . "$HOME/.cargo/env"
+RUSTC_WRAPPER=sccache
+
+export PATH="$PATH:/Users/jon/.modular/bin"
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/jon/.cache/lm-studio/bin"
+
+export PATH="$PATH:/Users/jon/.modular/bin"
+
+export NVM_DIR="$HOME/.config/nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# Load starship
+eval "$(starship init zsh)"
+
+
+# Added by Antigravity
+export PATH="/Users/jon/.antigravity/antigravity/bin:$PATH"

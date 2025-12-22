@@ -1,0 +1,54 @@
+# focus window
+alt - h : yabai -m window --focus west
+alt - j : yabai -m window --focus south
+alt - k : yabai -m window --focus north
+alt - l : yabai -m window --focus east
+
+# swap managed window
+shift + alt - h : yabai -m window --swap west
+shift + alt - j : yabai -m window --swap south
+shift + alt - k : yabai -m window --swap north
+shift + alt - l : yabai -m window --swap east
+
+# move managed window
+hyper - h : yabai -m window --warp west
+hyper - j : yabai -m window --warp south
+hyper - k : yabai -m window --warp north
+hyper - l : yabai -m window --warp east
+
+# rotate tree
+alt - r : yabai -m space --rotate 90
+
+# toggle window fullscreen zoom
+alt - f : yabai -m window --toggle zoom-fullscreen
+
+# float / unfloat window and center on screen
+alt - t : yabai -m window --toggle float;\
+          yabai -m window --grid 4:4:1:1:2:2
+
+# toggle window split type
+# alt - e : yabai -m window --toggle split
+
+# balance size of windows
+shift + alt - 0 : yabai -m space --balance
+
+# move window and focus desktop
+meh - 1 : yabai -m window --space 1; skhd -k "cmd - 1"
+meh - 2 : yabai -m window --space 2; skhd -k "cmd - 2"
+meh - 3 : yabai -m window --space 3; skhd -k "cmd - 3"
+meh - 4 : yabai -m window --space 4; skhd -k "cmd - 4"
+meh - 5 : yabai -m window --space 5; skhd -k "cmd - 5"
+meh - 6 : yabai -m window --space 6; skhd -k "cmd - 6"
+meh - 7 : yabai -m window --space 7; skhd -k "cmd - 7"
+meh - 8 : yabai -m window --space 8; skhd -k "cmd - 8"
+meh - 9 : yabai -m window --space 9; skhd -k "cmd - 9"
+
+# open browser
+alt - b: open -a "Safari"
+alt - v: open -a "Microsoft Edge"
+alt - o: open -a "Obsidian"
+alt - e: open -a "Commander One"
+
+# open terminal
+alt - return: /opt/homebrew/bin/kitty -1 -d $HOME
+

@@ -1,0 +1,21 @@
+# vim: ft=zsh
+
+if [[ "$(uname -s)" == "Darwin" ]]; then
+    arch="$(uname -m)"
+    if [[ "$arch" == "arm64" ]]; then
+        # Apple Silicon (ARM) – default Homebrew path
+        if [[ -x "/opt/homebrew/bin/brew" ]]; then
+            eval "$(/opt/homebrew/bin/brew shellenv)"
+        fi
+    elif [[ "$arch" == "x86_64" ]]; then
+        # Intel (x86_64) – default Homebrew path
+        if [[ -x "/usr/local/bin/brew" ]]; then
+            eval "$(/usr/local/bin/brew shellenv)"
+        fi
+    fi
+
+    # Fallback: if brew is already in PATH, use it
+    if command -v brew >/dev/null 2>&1; then
+        eval "$(brew shellenv)"
+    fi
+fi

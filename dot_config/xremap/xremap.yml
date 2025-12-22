@@ -1,0 +1,20 @@
+keymap:
+  - name: Edge
+    application:
+      only: Microsoft-edge
+    remap:
+      Super-t: C-t
+      Super-w: C-w
+      Super-c: C-c
+      Super-v: C-v
+      Super-x: C-x
+      Super-n: C-n
+      Super-p: C-p
+      Super-f: C-f
+  - name: Obisidian
+    application:
+      only: obsidian
+    remap:
+      Super-c: C-c
+      Super-v: C-v
+      Super-x: C-x
