@@ -10,6 +10,9 @@ brew "podman-tui"
 {{ end -}}
 
 # Common brews
+brew "podman"
+brew "podman-compose"
+brew "podman-tui"
 brew "gemini-cli"
 brew "kubectl"
 brew "libavif"
@@ -25,6 +28,7 @@ brew "uv"
 {{ if eq .machine "personal" -}}
 cask "discord"
 cask "plexamp"
+cask "podman-desktop"
 cask "readest"
 {{ else if eq .machine "work" -}}
 # Work only casks (none unique)
