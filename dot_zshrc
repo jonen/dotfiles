@@ -100,6 +100,8 @@ alias rmove="rsync --partial --progress --append --rsh=ssh --recursive --human-r
 alias vim=nvim
 alias v=nvim
 
+alias docker=podman
+
 alias sudoedit="sudo -e"
 
 alias c=clear
