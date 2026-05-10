@@ -1,0 +1,4 @@
+# update homebrew bundle and mac app store
+update:
+  brew bundle --file=~/.Brewfile --cleanup --verbose
+  mas update 
