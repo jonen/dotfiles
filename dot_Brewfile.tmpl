@@ -4,6 +4,7 @@
 {{ if eq .machine "personal" -}}
 # Personal only brews (none unique for now, but leaving structure)
 brew "go"
+brew "lima"
 {{ else if eq .machine "work" -}}
 brew "podman-tui"
 {{ end -}}
@@ -13,6 +14,7 @@ brew "chezmoi"
 brew "podman"
 brew "podman-compose"
 brew "gemini-cli"
+brew "just"
 brew "kubectl"
 brew "libavif"
 brew "mas"
